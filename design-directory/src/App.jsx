@@ -16,11 +16,10 @@ import Font from "./components/font.jsx"
 import Design_inspo from "./components/desin-inspo.jsx"
 import Icons from "./components/icons.jsx"
 import Illustration from "./components/illustrations.jsx";
-import { useState } from "react"
+import {Routes, Route, useNavigate,} from "react-router-dom";
 
 export default function App() {
-  const [selectpage,setselectpage] = useState("colours");
-
+  const navigate = useNavigate();
   return (
     <>
       {/* parent layout container */}
@@ -37,32 +36,32 @@ export default function App() {
           {/* Navigation bar */}
           <div className="flex flex-col items-start justify-start w-full h-[230px] mt-2 mr-2 overflow-y-auto hide-scrollbar">
               
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => setselectpage("colours")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/colours")}>
                 <img src={color} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">colours</span>
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => setselectpage("mockups")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/mockups")}>
                 <img src={mockup} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">mockups</span>
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => setselectpage("font")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/fonts")}>
                 <img src={font} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">font</span>
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => setselectpage("design-inspo")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/design-inspirations")}>
                 <img src={design_inspo} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">design-inspo</span>
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => setselectpage("icons")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/icons")}>
                 <img src={icon} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">icons</span>
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => setselectpage("illustrations")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/illustrations")}>
                 <img src={illustration} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">illustrations</span>
               </div>
@@ -93,16 +92,18 @@ export default function App() {
         <div className="flex-row items-center justify-center w-4/5 p-[5px] bg-white overflow-y-scroll hide-scrollbar border-[2px] border-[#F6F6F6] rounded-[15px]">
           <SearchBar />
           {/* Conditional rendering based on selected page */}
-          {selectpage === "colours" && <Colours />}
-          {selectpage === "mockups" && <Mockups />}
-          {selectpage === "font" && <Font />}
-          {selectpage === "design-inspo" && <Design_inspo />}
-          {selectpage === "icons" && <Icons />}
-          {selectpage === "illustrations" && <Illustration />}
+          <Routes>
+            <Route path="/colours" element={<Colours />} />
+            <Route path="/mockups" element={<Mockups />} />
+            <Route path="/fonts" element={<Font />} />
+            <Route path="/design-inspirations" element={<Design_inspo />} />
+            <Route path="/icons" element={<Icons />} />
+            <Route path="/illustrations" element={<Illustration />} />
+          </Routes>
         </div>
         
         
-      </div>  
+      </div>
     </>
   );
 }
