@@ -16,10 +16,12 @@ import Font from "./components/font.jsx"
 import Design_inspo from "./components/desin-inspo.jsx"
 import Icons from "./components/icons.jsx"
 import Illustration from "./components/illustrations.jsx";
-import {Routes, Route, useNavigate,} from "react-router-dom";
+import Side_nav_arrow from "./components/side_nav_arrow.jsx";
+import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
 
 export default function App() {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <>
       {/* parent layout container */}
@@ -34,36 +36,42 @@ export default function App() {
           </div>
 
           {/* Navigation bar */}
-          <div className="flex flex-col items-start justify-start w-full h-[230px] mt-2 mr-2 overflow-y-auto hide-scrollbar">
+          <div className="flex flex-col items-start justify-start w-auto h-[230px] mt-2 mr-[5px] mb-[5px] overflow-y-auto hide-scrollbar">
               
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/colours")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[18px]" onClick={() => navigate("/colours")}>
                 <img src={color} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">colours</span>
+                {location.pathname === "/colours" && <Side_nav_arrow style={{"--left-margin":'50px'}} />}
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/mockups")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[18px]" onClick={() => navigate("/mockups")}>
                 <img src={mockup} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">mockups</span>
+                {location.pathname=== "/mockups" && <Side_nav_arrow style={{"--left-margin":'29px'}} />}
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/fonts")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[18px]" onClick={() => navigate("/fonts")}>
                 <img src={font} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">font</span>
+                {location.pathname === "/fonts" && <Side_nav_arrow style={{"--left-margin":'87px'}} />}
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/design-inspirations")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[18px]" onClick={() => navigate("/design-inspirations")}>
                 <img src={design_inspo} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
-                <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">design-inspo</span>
+                <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">inspirations</span>
+                {location.pathname === "/design-inspirations" && <Side_nav_arrow />}
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/icons")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[18px]" onClick={() => navigate("/icons")}>
                 <img src={icon} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">icons</span>
+                {location.pathname === "/icons" && <Side_nav_arrow style={{"--left-margin":'75px'}} />}
               </div>
 
-              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6]" onClick={() => navigate("/illustrations")}>
+              <div className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[18px]" onClick={() => navigate("/illustrations")}>
                 <img src={illustration} alt="color icon" className="ml-[10px] w-[30px] h-[30px] p-[5px] border-[1.5px] border-[#EBEBEB] rounded-[10px]" />
                 <span className="ml-[10px] items-start justify-center font-Afacad font-medium text-[30px]">illustrations</span>
+                {location.pathname === "/illustrations" && <Side_nav_arrow />}
               </div>
 
           </div> 
@@ -79,7 +87,7 @@ export default function App() {
           </button>
 
           {/* footer with social media links */}
-          <div className=" flex flex-row items-center justify-center w-[200px] ml-2 mr-4 h-[20px] mt-3 bg-white ">
+          <div className=" flex flex-row items-center justify-center w-[200px] ml-2 mr-4 h-[20px] mt-2 bg-white ">
             <div className="text-[12px] font-Afacad font-bold text-black ">made by Atharv Remeshan</div>
             <img src={linkedin} alt="linkedin icon" className="w-[12px] h-[12px] mx-[5px] hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out" />
             <img src={twitter} alt="twitter icon" className="w-[12px] h-[12px] mx-[5px] hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out" />          
