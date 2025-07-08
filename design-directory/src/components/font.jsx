@@ -2,7 +2,7 @@ import { Title, Meta } from 'react-head';
 function Font(){
     return (
         <>
-            <Title>Fonts | Design Directory</Title>
+            <Title>Fonts | Design Index</Title>
             
             <Meta name="description" content="A curated selection of font libraries to enhance your typography with style, clarity, and brand identity."/>
             <Meta property="og:title" content="Fonts | Design Directory" />
@@ -17,8 +17,8 @@ function Font(){
             {/*<Meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />*/}
             
             <div className="flex flex-col items-start justify-center h-auto mt-[5px] p-[5px]">
-                <span className="font-bold text-[30px] font- ml-[12px]">font</span>
-                <p className="text-[16px] font-Afacad font-medium ml-[12px] mr-[12px] text-wrap leading-4 text-justify">
+                <span className="font-semibold text-[30px] font-Poppins ml-[12px]">font</span>
+                <p className="text-[13px] font-Poppins font-medium ml-[12px] mr-[12px] text-wrap leading-4 text-justify">
                     A handpicked selection of font libraries to bring personality and clarity to your typography. 
                     Whether you're looking for elegant serifs, modern sans-serifs, or expressive display fonts, 
                     this section helps you find the perfect typeface to elevate your design language and reinforce brand identity.
