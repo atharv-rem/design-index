@@ -8,6 +8,8 @@ import send from "./assets/sent-stroke-rounded.svg"
 import sidebar_illustration from "./assets/sidebar illustration.png"
 
 import SearchBar from "./components/search bar.jsx";
+import Searchresults from "./components/search results.jsx";
+import Searchimage from "./components/searchimage.jsx";
 
 import Colours from "./components/colours.jsx"
 import Mockups from "./components/mockups.jsx"
@@ -86,28 +88,31 @@ export default function App() {
 
           </div> 
 
-          {/*cute illustration*/}
-          <img src={sidebar_illustration} alt="" className="w-[150px] h-[150px] mt-[60px] mb-[5px] mx-[30px]" />
+          <div className="items-center justify-center absolute bottom-[20px] left-[10px] w-auto flex flex-col px-[10px]">
+            {/* cute illustration */}
+            <img src={sidebar_illustration} alt="an illustration of people looking at computer screen" className="w-[150px] h-[150px] my-[5px]" />
 
-          {/* warning text */}
-          <div className="flex flex-col items-start justify-center w-auto h-auto p-[10px] mt-[10px] mb-[10px] ml-[10px] mr-[14px] bg-white border-[1px] border-[#d8d8d8] rounded-[15px]">
-            <span className="text-[15px] font-Outfit text-black font-semibold leading-none">warning!</span>
-            <span className="text-[13px] font-Outfit text-[#6f6f6f] font-medium leading-3.5">no emails, no bullshi* we only offer the best design resources</span>
+            {/* warning text */}
+            <div className="flex flex-col items-start justify-center w-[200px] p-[10px] bg-white border-[1px] border-[#d8d8d8] rounded-[15px] mb-[10px]">
+              <span className="text-[15px] font-Outfit text-black font-semibold leading-none">warning!</span>
+              <span className="text-[13px] mt-[3px] font-Outfit text-[#6f6f6f] font-medium leading-4">
+                no emails, no bullshi* we only offer the best design resources
+              </span>
+            </div>
+
+            {/* submit a tool button */}
+            <button className="w-[200px] h-auto bg-white border-[1.5px] border-[#e3e3e3] rounded-[20px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
+              <img src={send} alt="submit icon" className="w-[30px] h-[30px] p-[5px] mr-[2px]" />
+              <span className="text-[20px] font-Afacad font-bold">submit a tool</span>
+            </button>
           </div>
 
-          
-          {/* submit a tool button */}
-          <button className="w-[200px] h-auto hover:border-[#e4e4e4] bg-white border-[1.5px] border-[#e3e3e3] rounded-[20px] p-[2px] ml-2 mr-4 mt-2 mb-[10px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
-            <img src={send} alt="submit icon" className="w-[30px] h-[30px] p-[5px] mr-[2px]" />
-            <span className="text-[20px] font-Afacad font-bold">submit a tool</span>
-          </button>
-
-          
         </div>
 
 
         {/* right content area*/}
-        <div className="flex-row items-center justify-center w-4/5 p-[5px] mb-[10px] bg-white overflow-y-scroll hide-scrollbar">
+        <div className="flex-col items-center justify-center w-4/5 p-[5px] mb-[10px] bg-white overflow-y-scroll hide-scrollbar">
+        
           <SearchBar />
           {/* Conditional rendering based on selected page */}
           <Routes>
@@ -122,6 +127,8 @@ export default function App() {
             <Route path='/Privacy-Policy' element={<PrivacyPolicy />} />
             <Route path='/About' element={<About />} />
             <Route path='/Terms-and-Conditions' element={<Terms_and_Conditions />} />
+            <Route path='/Search-Results' element={<Searchresults />} />
+            <Route path='/Search' element={<Searchimage />} />
           </Routes>
         </div>
         
