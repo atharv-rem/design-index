@@ -31,22 +31,24 @@ export default function Searchresults() {
         <div
             key={index}
             onClick={() => setSearchParams({ tool: item.tool_name })}
-            className="cursor-pointer bg-white p-[6px] rounded-[15px] border border-[#e1e1e1] flex flex-row items-start justify-left hover:shadow-sm hover:translate-y-[-2px] transition-all duration-200 ease-in-out"
+            className="bg-white rounded-[15px] lg:rounded-[20px] xl:rounded-[24px] justify-start items-start border-[1px] border-[#e1e1e1] flex flex-row hover:shadow-sm hover:translate-y-[-2px] transition-all duration-200 ease-in-out cursor-pointer"
         >
-            <img alt={item.description.toLowerCase()} src={item.og_image_link} className="h-[120px] w-[220px] rounded-[9px] flex-shrink-0 overflow-hidden" />
-            <div className='flex flex-col justify-center ml-[15px] w-auto mt-[10px]'>
-                <div className="text-[14px] text-black font-Outfit font-bold p-0 leading-4 ">{item.tool_name}</div>
+            <img alt={item.description.toLowerCase()} src={item.og_image_link} className="h-[110px] w-[200px] sm:h-[110px] sm:w-[220px] md:h-[130px] md:w-[240px] lg:h-[140px] lg:w-[240px] xl:w-[300px] xl:h-[160px] 2xl:w-[340px] 2xl:h-[185px] rounded-[10px] sm:rounded-[10px] md:rounded-[14px] lg:rounded-[14px] xl:rounded-[18px] flex-shrink-0 overflow-hidden ml-[5px] xs:ml-[5px] sm:ml-[6px] md:ml-[7px] lg:ml-[7px] xl:ml-[5px] 2xl:ml-[7px] mt-[5px] mb-[5px]" />
+            <div className='flex flex-col justify-start items-start ml-[15px] mr-[12px] w-auto h-full mt-[10px]'>
+                <div className="text-[14px] lg:text-[17px] xl:text-[19px] 2xl:text-[25px] text-black font-Outfit font-bold p-0 leading-4 xl:leading-5 mt-[5px] lg:mt-[8px] 2xl:mt-[15px]">{item.tool_name}</div>
                 {item.pricing.length > 5 ? (
                     <div className='flex flex-row items-center justify-start'>
-                        <div className="font-Poppins font-semibold flex text-[11px] py-[2px] px-0 text-[#20851c] bg-[#d9ffd7] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px]">free</div>
-                        <div className="flex font-Poppins font-semibold text-[11px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px] ml-[5px]">paid</div>
+                        <div className="font-Poppins font-semibold flex text-[11px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] py-[5px] px-[5px] text-[#20851c] bg-[#d9ffd7] w-[40px] h-[20px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[7px] 2xl:mt-[15px]">free</div>
+                        <div className="flex font-Poppins font-semibold text-[11px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[40px] h-[20px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[7px] ml-[5px] 2xl:mt-[15px]">paid</div>
                     </div>
                 ) : item.pricing === 'free' ? (
-                    <div className="font-Poppins font-semibold flex text-[11px] py-[2px] px-0 text-[#20851c] bg-[#d9ffd7] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px]">free</div>
+                    <div className="font-Poppins font-semibold flex text-[11px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] py-[5px] px-[5px] text-[#20851c] bg-[#d9ffd7] w-[40px] h-[20px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[7px] 2xl:mt-[15px]">free</div>
                 ) : item.pricing === 'paid' ? (
-                    <div className="flex font-Poppins font-semibold text-[11px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px]">paid</div>
+                    <div className="flex font-Poppins font-semibold text-[11px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[40px] h-[20px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[7px] 2xl:mt-[15px]">paid</div>
                 ) : null}
-                <p className="text-[12px] font-Outfit font-semibold text-[#595959] leading-tight justify-evenly mr-[5px]">{item.description.toLowerCase()}</p>
+                <p className="text-[12px] lg:text-[15px] xl:text-[17px] 2xl:text-[20px] font-Outfit font-semibold text-[#595959]  leading-[12px] xs:leading-[15px] sm:leading-3 md:leading-4 lg:leading-5 justify-evenly mr-[5px] mt-[5px] lg:mt-[7px] 2xl:mt-[10px]">
+                   {item.description.toLowerCase()}
+                </p>
             </div>
         </div>
     ));
@@ -70,51 +72,54 @@ export default function Searchresults() {
         if (selectedItem) { // clicking a tool from the search results, selectedItem will be defined as the tool param is put in place rendering this part
         return (
                 <>
-                <div className='flex flex-col items-start justify-start p-[5px] mt-[57px]'>
+                <div className='flex flex-col items-start justify-center h-auto mt-[100px] md:mt-[57px] lg:mt-[70px] xl:mt-[80px] 2xl:mt-[80px] p-[5px] w-auto'>
 
                     {/*back button removes the tool param from the link which lets is take it back to the orginal grid*/}
                     <div onClick={() =>setSearchParams({})} className='flex flex-row items-center justify-start cursor-pointer opacity-70 hover:opacity-100 hover:translate-x-[-2px] transition-all duration-200 ease-in-out'>
-                        <img src={left_arrow} alt='back arrow' className='w-[20px] h-[20px]' />
-                        <span className='font-Outfit text-[18px] font-medium text-[black] ml-[5px]'>back</span>
+                        <img src={left_arrow} alt='back arrow' className='w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[25px] lg:h-[25px] xl:w-[30px] xl:h-[30px] 2xl:w-[35px] 2xl:h-[35px]' />
+                        <span className='font-Outfit text-[18px] md:text-[18px] lg:text-[20px] xl:text-[25px] 2xl:text-[30px] font-medium text-[black] ml-[5px]'>back</span>
                     </div>
 
                     {/*this is the extended description page of each tool when clicked*/}
-                    <div className='flex flex-row items-start justify-start mt-[10px]'>
-                    <img src={selectedItem.og_image_link} alt="og image" className='h-[180px] w-[340px] rounded-[10px]'/>
-                    <div className='flex flex-col items-start justify-start ml-[20px]'>
+                    <div className='flex flex-col sm:flex-row items-start justify-start mt-[10px]'>
+                        <img src={selectedItem.og_image_link} alt="og image" className=' h-auto w-full sm:h-[180px] sm:w-[320px] md:h-[180px] md:w-[340px] lg:h-[200px] lg:w-[360px] xl:h-[240px] xl:w-[440px] 2xl:h-[280px] 2xl:w-[520px] rounded-[20px] md:rounded-[20px] lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[40px]'/>
+                        <div className='flex flex-col items-start justify-start ml-0 sm:ml-[20px]'>
+                            <span className='font-semibold text-[25px] font-Outfit mt-[5px] '>{selectedItem.tool_name}</span>
+                            {selectedItem.pricing.length > 5 ? (
                             <div className='flex flex-row items-center justify-start'>
-                                <div onClick={handleCopyLink} className='items-center justify-center w-[140px] h-auto p-[2px] border-[1.5px] border-[#e3e3e3] rounded-[20px] flex flex-row opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out'>
-                                    <img src={share_icon} alt='share icon' className='w-[15px] h-[15px]' />
-                                    <span className='text-[15px] font-Outfit font-medium ml-[5px]'>{copied ? "link copied!" : "share this tool"}</span>
+                                <div className="font-Outfit font-semibold flex text-[15px] sm:text-[14px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] py-[5px] px-[5px] text-[#20851c] bg-[#d9ffd7] w-[45px] h-[25px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[3px] 2xl:mt-[8px]">free</div>
+                                <div className="flex font-Outfit font-semibold text-[15px] sm:text-[14px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[45px] h-[25px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[3px] ml-[5px] 2xl:mt-[8px]">paid</div>
+                            </div>
+                            )
+                            : selectedItem.pricing === 'free' ? (
+                                <div className="font-Outfit font-semibold flex text-[15px] sm:text-[14px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] py-[5px] px-[5px] text-[#20851c] bg-[#d9ffd7] w-[45px] h-[25px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[3px] 2xl:mt-[8px]">free</div>
+                            ) : selectedItem.pricing === 'paid' ? (
+                                <div className="flex font-Outfit font-semibold text-[15px] sm:text-[14px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[45px] h-[25px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[3px] 2xl:mt-[8px]">paid</div>
+                            )
+                            : null}
+                            <p className=' text-[17px] sm:text-[15px] md:text-[15px] lg:text-[18px] xl:text-[23px] 2xl:text-[26px] font-Outfit font-medium sm:mr-[12px] mt-[5px] xl:mt-[10px] leading-[20px] lg:leading-5 xl:leading-6 2xl:leading-7 justify-evenly'>
+                                {selectedItem.extended_description.toLowerCase()}
+                            </p>
+                            <div className='flex w-full flex-row items-center justify-center sm:justify-start mt-[15px]'>
+                                <div onClick={handleCopyLink} className='items-center justify-center w-auto h-auto px-[10px] py-[3px] bg-white border-[1.5px] border-[#898989] rounded-[20px] xl:rounded-[25px] flex flex-row hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out'>
+                                    <img src={share_icon} alt='share icon' className='w-[16px] h-[16px] md:w-[16px] md:h-[16px] lg:w-[19px] lg:h-[19px] xl:w-[22px] xl:h-[22px] 2xl:w-[26px] 2xl:h-[26px]' />
+                                    <span className='text-[16px] md:text-[16px] lg:text-[19px] xl:text-[24px] 2xl:text-[28px] text-black font-Outfit font-semibold ml-[5px]'>{copied ? "link copied!" : "share this tool"}</span>
                                 </div>
                                 <a href={addRefParam(selectedItem.website)} target="_blank" rel="noopener noreferrer">
-                                    <div className='flex flex-row items-center justify-center ml-[5px] w-[120px] h-auto p-[2px] border-[1.5px] border-[#e3e3e3] rounded-[20px] opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out '>
-                                        <img src={link_arrow} alt='link arrow' className='w-[20x] h-[20px]' />
-                                        <span className='text-[15px] font-Outfit font-medium ml-[5px]'>visit website</span>
+                                    <div className='flex flex-row items-center justify-center ml-[10px] w-auto px-[10px] py-[3px] h-auto bg-white border-[1.5px] border-[#898989]  rounded-[20px] xl:rounded-[25px]  hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out '>
+                                        <img src={link_arrow} alt='link arrow' className='w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[23px] lg:h-[23px] xl:w-[26px] xl:h-[26px] 2xl:w-[30px] 2xl:h-[30px]' />
+                                        <span className='text-[16px] md:text-[16px] lg:text-[19px] xl:text-[24px] 2xl:text-[28px] font-Outfit text-black font-semibold ml-[5px]'>visit website</span>
                                     </div>
                                 </a>
                             </div>
-                            <span className='font-semibold text-[25px] font-Outfit mt-[5px] '>{selectedItem.tool_name}</span>
-                            {selectedItem.pricing.length > 5 ? (
-                                <div className='flex flex-row items-center justify-start'>
-                                <div className="font-Poppins font-semibold flex text-[11px] py-[2px] px-0 text-[#20851c] bg-[#d9ffd7] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px]">free</div>
-                                <div className="flex font-Poppins font-semibold text-[11px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px] ml-[5px]">paid</div>
-                                </div>
-                            )
-                            : selectedItem.pricing === 'free' ? (
-                                <div className="font-Poppins font-semibold flex text-[11px] py-[2px] px-0 text-[#20851c] bg-[#d9ffd7] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px]">free</div>
-                            ) : selectedItem.pricing === 'paid' ? (
-                                <div className="flex font-Poppins font-semibold text-[11px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[40px] h-[20px] justify-center items-center rounded-[8px] mt-[3px] mb-[3px]">paid</div>
-                            )
-                            : null}
-                            <p className='text-[15px] font-Outfit font-medium mr-[12px] mt-[5px] leading-4 text-justify'>
-                                    {selectedItem.extended_description}
-                            </p>
                         </div>
                     </div>
                 </div>
 
-                <Footer />
+                <div className='fixed bottom-[15px] sm:bottom-[20px] w-auto sm:w-[78vw] flex flex-row'>
+                    <Footer />
+                </div>
+
                 </>
         )
         }
@@ -123,9 +128,9 @@ export default function Searchresults() {
             if (results.every(r => r.matchedKeywords <= 1)) {
                 return(
                     <>
-                        <div className="flex flex-col items-start justify-center h-auto mt-[45px] font-Outfit text-black font-medium text-[15px] ml-[5px]">relevant results</div>
-                            <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] mb-[10px]">{similar_results_count} tools</div>
-                            <div className="grid grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
+                        <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[40px] xl:mt-[50px] font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] ml-[5px]">relevant results</div>
+                            <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{similar_results_count} tools</div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
                                 {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords === 1)))}
                         </div>
                         <Footer />
@@ -136,19 +141,19 @@ export default function Searchresults() {
             else if (results.some(r=> r.matchedKeywords > 1)) {
                 return (
                 <>
-                    <div className="flex flex-col items-start justify-center h-auto mt-[45px] font-Outfit text-black font-medium text-[15px] ml-[5px]">relevant results</div>
-                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] mb-[10px]">{relevant_results_count} tools</div>
-                    <div className="grid grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
+                    <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[40px] xl:mt-[50px] font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] ml-[5px]">relevant results</div>
+                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{relevant_results_count} tools</div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
                         {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords > 1)))}
                     </div>
 
-                    <div className="flex flex-row items-center justify-left h-auto w-auto mt-[10px] ml-[5px] cursor-pointer" onClick={handle_similar_results_click}>
-                        <span className="font-Outfit text-black font-semibold text-[15px]">similar results</span>
-                        <img src={arrow_down} alt="arrow down" className="w-[15px] h-[15px] ml-[2px]" />
+                    <div className="flex flex-row items-center justify-start h-auto mt-[20px] ml-[5px] cursor-pointer" onClick={handle_similar_results_click}>
+                        <span className="font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px]">similar results</span>
+                        <img src={arrow_down} alt="arrow down" className="w-[15px] h-[15px] sm:w-[17px] sm:h-[17px] md:w-[19px] md:h-[19px] xl:w-[22px] xl:h-[22px] 2xl:w-[28px] 2xl:h-[28px] ml-[2px]" />
                     </div>
-                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-medium text-[15px] mb-[10px]">{similar_results_count} tools</div>
+                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{similar_results_count} tools</div>
                     {click && (
-                        <div className="grid grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
                             {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords === 1)))}
                         </div>
                     )}

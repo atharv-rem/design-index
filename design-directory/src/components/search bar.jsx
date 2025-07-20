@@ -91,8 +91,8 @@ function SearchBar() {
 
   return (
     <>
-      <div className="p-[10x] flex flex-row items-center justify-start w-[878px] h-[35px] bg-white border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[10px] z-3 fixed">
-        <img src={search} alt="search icon" className="w-[22px] h-[22px] ml-2" />  
+      <div className=" flex flex-row items-center justify-start flex-grow w-[84vw] sm:w-[91vw] right-[10px] left-[10px] top-[70px] md:top-[15px] sm:right-[15px] sm:left-[15px] md:left-auto md:w-[78vw] 2xl:w-[79vw] md:right-[20px] h-[35px] lg:h-[40px] xl:h-[45px] 2xl:h-[50px] bg-white border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[10px] z-3 fixed">
+        <img src={search} alt="search icon" className="w-[22px] h-[22px] lg:w-[24px] lg:h-[24px] xl:w-[26px] xl:h-[26px] 2xl:w-[28px] 2xl:h-[28px] ml-2" />  
         <textarea
           value={tempinput_value}
           onChange={(e) => {
@@ -108,7 +108,7 @@ function SearchBar() {
             } 
           }}
           onClick={handleSearchImage}
-          className="w-full overflow-hidden resize-none font-Outfit font-semibold text-black text-[15px] placeholder:text-[#737373] placeholder:font-medium placeholder:tracking-normal ml-2 mr-2 outline-none bg-transparent leading-tight"
+          className="w-full overflow-hidden resize-none font-Outfit font-semibold text-black text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[24px] placeholder:text-[#737373] placeholder:font-medium placeholder:tracking-normal ml-2 mr-2 outline-none bg-transparent leading-tight"
           rows={1}
         />
       </div>

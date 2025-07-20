@@ -5,11 +5,17 @@ import mockup from "./assets/hold-phone-stroke-rounded.svg"
 import design_inspo from "./assets/canvas-stroke-rounded.svg"
 import illustration from "./assets/ai-beautify-stroke-rounded.svg"
 import send from "./assets/sent-stroke-rounded.svg"
-import sidebar_illustration from "./assets/sidebar illustration.png"
 
 import SearchBar from "./components/search bar.jsx";
 import Searchresults from "./components/search results.jsx";
 import Searchimage from "./components/searchimage.jsx";
+import sidebar_icon from "./assets/sidebar icon.png"
+import sidebar_close_icon from "./assets/sidebar close.png"
+import india from './assets/Indian flag.png';
+import heart from './assets/love.png';
+import twitter from './assets/XLogo.png'
+import insta from './assets/InstagramLogo.png';
+import linkedin from "./assets/LinkedinLogo.png"
 
 import Colours from "./components/colours.jsx"
 import Mockups from "./components/mockups.jsx"
@@ -22,98 +28,189 @@ import logo from "./assets/logo.png";
 import PrivacyPolicy from "./components/privacy policy.jsx";
 import About from "./components/about.jsx";
 import Terms_and_Conditions from "./components/terms and conditions.jsx"
+import { useState} from "react";
 import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
+
+import Zustand_global_storage from "./zustand-global-storage.js"
 
 export default function App() {
   const navigate = useNavigate();
   const location = useLocation();
+  const navItems = [
+    {
+      path: "/colours",
+      label: "colours",
+      icon: color,
+      leftMargin: "75px"
+    },
+    {
+      path: "/mockups",
+      label: "mockups",
+      icon: mockup,
+      leftMargin: "58px"
+    },
+    {
+      path: "/fonts",
+      label: "font",
+      icon: font,
+      leftMargin: "105px"
+    },
+    {
+      path: "/design-inspirations",
+      label: "inspirations",
+      icon: design_inspo,
+      leftMargin: "35px",
+    },
+    {
+      path: "/icons",
+      label: "icons",
+      icon: icon,
+      leftMargin: "92px"
+    },
+    {
+      path: "/illustrations",
+      label: "illustrations",
+      icon: illustration,
+      leftMargin: "35px",
+    },
+  ];
+  
+  //imported this so that i can enable scroll in search results page as  in default mode its turned off
+  const results = Zustand_global_storage((state) => state.results);
+  const aboutSectionOpened = Zustand_global_storage((state) => state.has_opened_about_section);
+  const privacySectionOpened = Zustand_global_storage((state) => state.has_opened_privacy_section);
+  const termsSectionOpened = Zustand_global_storage((state) => state.has_opened_terms_section);
+
+  // State to manage sidebar visibility
+  const [sidebarOpen, setSidebarOpen] = useState(false); 
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+  
+
   return (
     <>
       {/* parent layout container */}
       <div className="flex w-full h-screen p-[10px] overflow-hidden bg-white"> 
 
         {/* Left sidebar for navigation*/}
-        <div className="flex-col items-center justify-center w-1/5 bg-white min-h-screen max-h-screen position-fixed top-0 left-0">
+        <div className="sm:hidden xs:hidden hidden md:block flex-col items-center justify-center w-1/5 bg-white min-h-screen max-h-screen position-fixed top-0 left-0 relative">
           
         {/* logo and title */}
           <div className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] w-full">
-            <img style={{
-                      filter:'drop-shadow(0px 22px 6px rgba(84, 84, 84, 0.00)),drop-shadow(0px 14px 6px rgba(84, 84, 84, 0.01)),drop-shadow(0px 8px 5px rgba(84, 84, 84, 0.05)),drop-shadow(0px 4px 4px rgba(84, 84, 84, 0.09)),drop-shadow(0px 1px 2px rgba(84, 84, 84, 0.10))'
-                        }} 
-                alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] ml-[10px]"/>
-            <span style={{
-              textShadow: '-17px 126px 35px rgba(161, 161, 161, 0.00), -11px 80px 32px rgba(161, 161, 161, 0.03), -6px 45px 27px rgba(161, 161, 161, 0.10), -3px 20px 20px rgba(161, 161, 161, 0.17), -1px 5px 11px rgba(161, 161, 161, 0.20)'
-            }}
-            className="text-[22px] pl-2 font-Fustat font-semibold">design index.</span>                    
+            <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:w-[25px] md:h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px]"/>
+            <span className="text-[22px] md:text-[22px] lg:text-[28px] xl:text-[33px] 2xl:text-[38px] pl-2 font-Fustat font-semibold">design index.</span>                    
           </div>
 
           {/* Navigation bar */}
-          <div className="flex flex-col items-start justify-start w-auto h-[230px] mt-[17px] mr-[5px] mb-[5px] ml-[5px] overflow-y-auto hide-scrollbar">
+          <div className="flex flex-col gap-1 items-start justify-start w-auto h-full mt-[17px] xl:mt-[20px] mr-[5px] mb-[10px] ml-[5px] xl:ml-[10px] overflow-y-auto hide-scrollbar">
               
-              <div className="flex flex-row items-center justify-start w-full h-[40px] cursor-pointer hover:bg-[#F6F6F6] rounded-[10px]" onClick={() => navigate("/colours")}>
-                <img src={color} alt="color icon" className="ml-[5px] w-[25px] h-[25px] p-[4px] border-[1.5px] border-[#EBEBEB] rounded-[8px]" />
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px]">colours</span>
-                {location.pathname === "/colours" && <Side_nav_arrow style={{"--left-margin":'75px'}} />}
+              {navItems.map(({ path, label, icon, leftMargin, }) => (
+              <div
+                key={path}
+                className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[10px] p-[3px]"
+                onClick={() => navigate(path)}
+              >
+                <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
+                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px] md:text-[20px] lg:text-[28px] xl:text-[31px] 2xl:text-[36px]">{label}</span>
+                {location.pathname === path && <Side_nav_arrow style={{ "--left-margin": leftMargin }} />}
               </div>
-
-              <div className="flex flex-row items-center justify-start w-full h-[40px] cursor-pointer hover:bg-[#F6F6F6] rounded-[10px]" onClick={() => navigate("/mockups")}>
-                <img src={mockup} alt="color icon" className="ml-[5px] w-[25px] h-[25px] p-[4px] border-[1.5px] border-[#EBEBEB] rounded-[8px]" />
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px]">mockups</span>
-                {location.pathname=== "/mockups" && <Side_nav_arrow style={{"--left-margin":'58px'}} />}
-              </div>
-
-              <div className="flex flex-row items-center justify-start w-full h-[40px] cursor-pointer hover:bg-[#F6F6F6] rounded-[10px]" onClick={() => navigate("/fonts")}>
-                <img src={font} alt="color icon" className="ml-[5px] w-[25px] h-[25px] p-[4px] border-[1.5px] border-[#EBEBEB] rounded-[8px]" />
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px]">font</span>
-                {location.pathname === "/fonts" && <Side_nav_arrow style={{"--left-margin":'105px'}} />}
-              </div>
-
-              <div className="flex flex-row items-center justify-start w-full h-[40px] cursor-pointer hover:bg-[#F6F6F6] rounded-[10px]" onClick={() => navigate("/design-inspirations")}>
-                <img src={design_inspo} alt="color icon" className="ml-[5px] w-[25px] h-[25px] p-[4px] border-[1.5px] border-[#EBEBEB] rounded-[8px]" />
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px]">inspirations</span>
-                {location.pathname === "/design-inspirations" && <Side_nav_arrow style={{"--left-margin":'35px'}} />}
-              </div>
-
-              <div className="flex flex-row items-center justify-start w-full h-[40px] cursor-pointer hover:bg-[#F6F6F6] rounded-[10px]" onClick={() => navigate("/icons")}>
-                <img src={icon} alt="color icon" className="ml-[5px] w-[25px] h-[25px] p-[4px] border-[1.5px] border-[#EBEBEB] rounded-[8px]" />
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px]">icons</span>
-                {location.pathname === "/icons" && <Side_nav_arrow style={{"--left-margin":'92px'}} />}
-              </div>
-
-              <div className="flex flex-row items-center justify-start w-full h-[40px] cursor-pointer hover:bg-[#F6F6F6] rounded-[10px]" onClick={() => navigate("/illustrations")}>
-                <img src={illustration} alt="color icon" className="ml-[5px] w-[25px] h-[25px] p-[4px] border-[1.5px] border-[#EBEBEB] rounded-[8px]" />
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px]">illustrations</span>
-                {location.pathname === "/illustrations" && <Side_nav_arrow style={{"--left-margin":'35px'}}/>}
-              </div>
+            ))}
 
           </div> 
 
-          <div className="items-center justify-center absolute bottom-[20px] left-[10px] w-auto flex flex-col px-[10px]">
-            {/* cute illustration */}
-            <img src={sidebar_illustration} alt="an illustration of people looking at computer screen" className="w-[150px] h-[150px] my-[5px]" />
-
+          {/* Bottom section with illustration and submit button */}
+          <div className="items-start justify-start absolute bottom-[20px] left-[20px] md:bottom-[30px] md:left-[0px] md-right-[0px] lg:bottom-[30px] xl:bottom-[40px] w-auto flex flex-col md:mx-[5px] lg:mx-[10px]">
+            
             {/* warning text */}
-            <div className="flex flex-col items-start justify-center w-[200px] p-[10px] bg-white border-[1px] border-[#d8d8d8] rounded-[15px] mb-[10px]">
-              <span className="text-[15px] font-Outfit text-black font-semibold leading-none">warning!</span>
-              <span className="text-[13px] mt-[3px] font-Outfit text-[#6f6f6f] font-medium leading-4">
+            <div className="flex flex-col items-start justify-center h-auto w-full flex-grow p-[10px] lg:px-[15px] lg:py-[15px] 2xl:px-[20px] 2xl:py-[20px] bg-white border-[1px] border-[#eaeaea] md:rounded-[15px] lg:rounded-[20px] xl:rounded-[25px] 2xl:rounded-[30px] mb-[10px]">
+              <span className="md:text-[15px] lg:text-[20px] xl:text-[25px] 2xl:text-[30px] font-Outfit mb-[5px] text-black font-semibold leading-none">warning!</span>
+              <span className="md:text-[13px] lg:text-[18px] xl:text-[23px] 2xl:text-[28px] mt-[3px] font-Outfit text-[#6f6f6f] font-medium md:leading-3 lg:leading-5 xl:leading-6 2xl:leading-8">
                 no emails, no bullshi* we only offer the best design resources
               </span>
             </div>
 
             {/* submit a tool button */}
-            <button className="w-[200px] h-auto bg-white border-[1.5px] border-[#e3e3e3] rounded-[20px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
-              <img src={send} alt="submit icon" className="w-[30px] h-[30px] p-[5px] mr-[2px]" />
-              <span className="text-[20px] font-Afacad font-bold">submit a tool</span>
+            <button className="w-full flex-grow px-[20px] bg-white border-[1.5px] border-[#e3e3e3] md:rounded-[20px] lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[35px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
+              <img src={send} alt="submit icon" className="w-[30px] h-[30px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] mr-[2px]" />
+              <span className="md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-Outfit font-semibold">submit a tool</span>
             </button>
           </div>
 
         </div>
 
+        {/* Mobile sidebar for navigation */}
+        {sidebarOpen && (
+          <div className="md:hidden fixed top-0 left-0 w-[80%] p-[10px] h-screen bg-white z-50 shadow-lg justify-center overflow-auto">
+
+            <div className="flex flex-col justify-between w-full h-auto">
+              <div className="flex flex-row items-center justify-between mb-4 w-auto h-auto">
+                <div className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
+                  <img src={logo} alt="design index logo" className="w-[30px] h-[30px]" />
+                  <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px] items-center justify-start">design index.</span>
+                </div>
+                <img onClick={toggleSidebar} src={sidebar_close_icon} alt="close sidebar" className="w-[36px] h-[36px] p-[5px]"/>
+              </div>
+
+              {navItems.map(({ path, label, icon }) => (
+                <div
+                  key={path}
+                  className="flex items-center gap-[10px] cursor-pointer hover:bg-gray-100 p-2 rounded-md"
+                  onClick={() => {
+                    navigate(path);
+                    setSidebarOpen(false);
+                  }}
+                >
+                  <img src={icon} alt={label} className="w-[35px] h-[35px] border-[1.5px] border-[#EBEBEB] rounded-[8px] p-[5px]" />
+                  <span className="text-[25px] font-Outfit font-semibold text-black ">{label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:hidden items-start justify-start w-[70vw] h-auto p-[5px] fixed bottom-[70px] left-[20px]">
+                <div className="flex flex-row items-center justify-start w-full h-auto mb-[5px]">
+                  <img src={logo} alt="design index logo" className="w-[22px] h-[22px]  sm:w-[25px] sm:h-[25px] lg:w-[30px] lg:h-[30px] xl:w-[35px] xl:h-[35px] 2xl:h-[40px] 2xl:w-[40px]" />
+                  <span className="text-[19px] sm:text-[19px] md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
+                </div>
+                <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[22px] text-[#575757] font-Outfit leading-4 font-medium">collection of the best design resources on the internet</p>
+                <div className='flex flex-row items-center'>
+                  <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium">made with</p>
+                  <img src={heart} alt="Made with Love" className=" w-[15px] h-[15px] md:w-[15px] md:h-[15px] lg:w-[17px] lg:h-[17px] xl:w-[20px] xl:h-[20px] 2xl:w-[22px] 2xl:h-[22px] mx-[2px]" />
+                  <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium">by Atharv Remeshan</p>
+                </div>
+                <div className='flex flex-row items-center'>
+                  <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium">location - Mumbai,India</p>
+                  <img src={india} alt="indian flag" className="w-[15px] h-[10px]md:w-[17px] md:h-[12px] lg:w-[19px] lg:h-[14px] xl:w-[22px] xl:h-[16px] 2xl:w-[24px] 2xl:h-[18px] ml-[5px]" />
+                </div>
+                <div className='flex flex-row items-start justify-center mt-[5px]'>
+                  <img src={twitter} alt="X logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] mr-[5px] p-[5px] border-[1px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://x.com/atharv_rem", "_blank")} />
+                  <img src={insta} alt="Instagram logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] mr-[5px] p-[5px] border-[1px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://instagram.com/atharv_remeshan", "_blank")} />
+                  <img src={linkedin} alt="LinkedIn logo" className="w-[30px] h-[30px] md:w-[30px] md:h-[30px] lg:w-[32px] lg:h-[32px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] border-[1px] border-[#e2e2e2] rounded-[8px]" onClick={() => window.open("https://www.linkedin.com/in/atharv-rem", "_blank")} />
+                </div>
+            </div>
+
+            <button className="w-[70vw] sm:w-[75vw] h-auto px-[20px] bg-white border-[1.5px] border-[#e3e3e3] p-[2px] flex flex-row items-center justify-center fixed bottom-[20px] left-[20px] sm:left-[20px] rounded-[20px]">
+                <img src={send} alt="submit icon" className="w-[30px] h-[30px]" />
+                <span className="text-[25px] font-Outfit font-semibold">submit a tool</span>
+            </button>
+        </div>
+        )}
 
         {/* right content area*/}
-        <div className="flex-col items-center justify-center w-4/5 p-[5px] mb-[10px] bg-white overflow-y-scroll hide-scrollbar">
-        
+        <div className={`flex-col items-center justify-center w-full md:w-4/5 p-[5px] md:p-[5px] bg-white z-4 
+        ${(results.length !== 0 || aboutSectionOpened || privacySectionOpened || termsSectionOpened) ? "overflow-y-auto hide-scrollbar" : ""}`}>
+
+          {/* Mobile header */}
+          <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-1 p-[10px] bg-white">
+            <img src={logo} alt="design index logo" className="w-[30px] h-[30px]" />
+            <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
+          </div>
+
+          {/* Sidebar icon for mobile */}
+          <img onClick={toggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-3 bg-white" />
+
           <SearchBar />
+          
           {/* Conditional rendering based on selected page */}
           <Routes>
             <Route path="/colours" element={<Colours />} />
