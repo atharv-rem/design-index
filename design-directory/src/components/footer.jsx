@@ -1,10 +1,10 @@
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.avif';
 import heart from '../assets/love.png';
 import india from '../assets/Indian flag.png';
 import arrow from '../assets/arrrow.png';
 import twitter from '../assets/XLogo.png'
 import insta from '../assets/InstagramLogo.png';
-import linkedin from "../assets/LinkedinLogo.png"
+import linkedin from "../assets/LinkedinLogo.avif"
 import {useNavigate} from "react-router-dom"
 
 export default function Footer() {
@@ -22,7 +22,7 @@ export default function Footer() {
             name: "share", 
             path: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out design index, a collection of the best design resources on the internet! https://atharvrem.vercel.app")}` 
         },
-        { name: "feedback", path: ""},
+        { name: "feedback", path: "/Feedback" },
         { name: "submit a tool", path: ""},
     ]
 
@@ -35,19 +35,19 @@ export default function Footer() {
 
     return (
         <>
-            <div className="flex flex-row items-start justify-between w-full h-auto px-[5px] sm:px-[10px] pt-[10px] pb-0 mt-[30px] bg-white">
+            <div className="flex flex-row items-start justify-between w-full h-auto px-[5px] sm:px-0 md:px-[10px] pt-[10px] pb-0 mt-[30px] bg-white">
 
                 {/* left side */}
                 <div className="hidden sm:flex sm:flex-col items-start justify-start w-auto h-auto ">
                     <div className="flex flex-row items-center justify-start w-full h-auto mb-[5px]">
-                        <img src={logo} alt="design index logo" className="w-[22px] h-[22px]  sm:w-[25px] sm:h-[25px] lg:w-[30px] lg:h-[30px] xl:w-[35px] xl:h-[35px] 2xl:h-[40px] 2xl:w-[40px]" />
+                        <img src={logo} alt="design index logo" className="w-[22px] h-[22px]  sm:w-[25px] sm:h-[25px] lg:w-[30px] lg:h-[30px] xl:w-[35px] xl:h-[35px] 2xl:h-[40px] 2xl:w-[40px] rotate-[5deg]" />
                         <span className="text-[19px] sm:text-[19px] md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
                     </div>
-                    <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[22px] text-[#575757] font-Outfit leading-4 font-medium">collection of the best design resources on the internet</p>
+                    <p className="justify-start items-start text-left md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit leading-4 font-medium">collection of the best design resources on the internet</p>
                     <div className='flex flex-row items-center'>
-                        <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium">made with</p>
+                        <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium text-nowrap">made with</p>
                         <img src={heart} alt="Made with Love" className=" w-[15px] h-[15px] md:w-[15px] md:h-[15px] lg:w-[17px] lg:h-[17px] xl:w-[20px] xl:h-[20px] 2xl:w-[22px] 2xl:h-[22px] mx-[2px]" />
-                        <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium">by Atharv Remeshan</p>
+                        <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium text-nowrap">by Atharv Remeshan</p>
                     </div>
                     <div className='flex flex-row items-center'>
                         <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-[#575757] font-Outfit font-medium">location - Mumbai,India</p>
@@ -82,7 +82,7 @@ export default function Footer() {
                     </div>
                     
                     <div className='flex flex-col w-full'>
-                        <div className='flex flex-row  gap-x-[20px] md:gap-x-[30px] lg:gap-x-[60px]'>
+                        <div className='flex flex-row  gap-x-[20px] sm:gap-x-[10px] md:gap-x-[30px] lg:gap-x-[60px]'>
                             {/* connect section */}
                             <div className="flex flex-col items-start justify-start w-auto h-auto sm:ml-[20px] mt-[5px]">
                                 <span className="text-[17px] md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-black font-Outfit font-medium mb-[2px]">Connect</span>
@@ -125,7 +125,7 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
-                        <span className="w-full items-center justify-center text-[17px] sm:hidden text-[#898989] font-Outfit font-medium mt-[10px] mb-[10px] ">© 2025 design index. All rights reserved.</span>
+                        <span className="w-full items-start justify-start text-left text-[17px] sm:hidden text-[#898989] font-Outfit font-medium mt-[10px] mb-[10px] ">© 2025 design index. All rights reserved.</span>
                     </div>
                 </div>
             </div>

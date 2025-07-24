@@ -106,9 +106,11 @@ function Colours() {
       <Meta property="og:title" content="Colours | Design Directory" />
       <Meta property="og:description" content="Curated colour palettes, gradients and backgrounds to inspire consistent, visually appealing design." />
       <Meta property="og:type" content="website" />
+      <Meta property="og:image" content="https://pub-c51f3dea40b34c5f8f4cd14637f22cdc.r2.dev/og_image.avif" />
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:title" content="Colours | Design Directory" />
       <Meta name="twitter:description" content="Curated colour palettes, gradients and backgrounds to inspire consistent, visually appealing design." />
+      <Meta name="twitter:image" content="https://pub-c51f3dea40b34c5f8f4cd14637f22cdc.r2.dev/og_image.avif" />
 
       {!selectedItem ? // it checks if the url has tool parameter, since it is false here it displays the title along with the virtual list
       (
@@ -154,7 +156,7 @@ function Colours() {
 
                     return (
                       <div key={virtualRow.key} style={{position: 'absolute',top: 0, left: 0, width: '100%', transform: `translateY(${virtualRow.start}px)`, height: `${rowHeight}px`}}>
-                      <div className={`grid ${gridColsClass} gap-[15px] mt-[2px] w-full`}>
+                      <div className={`grid ${gridColsClass} gap-[15px] mt-[2px] w-full `}>
                           {rowItems.map((item)=>
                             item ? (
                                 <div

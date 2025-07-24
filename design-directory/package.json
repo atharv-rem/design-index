@@ -13,6 +13,7 @@
     "@supabase/supabase-js": "^2.50.0",
     "@tailwindcss/vite": "^4.1.10",
     "@tanstack/react-virtual": "^3.13.12",
+    "posthog-js": "^1.257.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-head": "^3.4.2",

@@ -8,6 +8,9 @@ import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Footer from "./footer.jsx";
 
+
+// This function takes a URL and returns the same URL with the ref parameter set to "designindex"
+// This is used to track referrals when users click on links to external websites.
 const addRefParam = (url) => {
   const u = new URL(url);
   u.searchParams.set("ref", "designindex");
@@ -125,26 +128,54 @@ export default function Searchresults() {
         }
         else
             {
+
+            //this lets me show only relevant results when match count is only 1 in the results array
             if (results.every(r => r.matchedKeywords <= 1)) {
                 return(
                     <>
-                        <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[40px] xl:mt-[50px] font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] ml-[5px]">relevant results</div>
-                            <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{similar_results_count} tools</div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
-                                {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords === 1)))}
+                        <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[65px] font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] ml-[5px]">relevant results</div>
+                        <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{similar_results_count} tools</div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
+                            {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords === 1)))}
                         </div>
                         <Footer />
                     </>
                 )
                 
             }
+
+            //this lets me show relevant results and similar results when match count is greater than 1 in the results array
             else if (results.some(r=> r.matchedKeywords > 1)) {
+                return (() => {
+                    //this allows me to show only the keywords with highest match count
+                    const max_match_count = Math.max(...results.map(r => r.matchedKeywords));
+                    const highest_match_results = results.filter(r => r.matchedKeywords === max_match_count);
+                    const relevant_results = data.filter(item => highest_match_results.some(r => r.id === item.primary_key));
+                    
+                    let similar_results;
+                    if (max_match_count === 2) {
+                        // If max match count is 2, show similar_results with exactly 1 match
+                        similar_results = data.filter(item =>
+                            results.some(r =>
+                                r.id === item.primary_key && r.matchedKeywords === 1
+                            )
+                        );
+                    } else {
+                        // otherwise, show similar_results with more than 1 match_count and less than max match_count
+                        similar_results = data.filter(item =>
+                            results.some(r =>
+                                r.id === item.primary_key && r.matchedKeywords < max_match_count && r.matchedKeywords > 1
+                            )
+                        );
+                    }
+
+                    const similar_results_count = similar_results.length;
                 return (
                 <>
-                    <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[40px] xl:mt-[50px] font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] ml-[5px]">relevant results</div>
-                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{relevant_results_count} tools</div>
+                    <div className="flex flex-col items-start justify-center h-auto mt-[105px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[65px] font-Outfit text-black font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] ml-[5px]">relevant results</div>
+                    <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-semibold text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{relevant_results.length} tools</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
-                        {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords > 1)))}
+                        {renderCards(relevant_results)}
                     </div>
 
                     <div className="flex flex-row items-center justify-start h-auto mt-[20px] ml-[5px] cursor-pointer" onClick={handle_similar_results_click}>
@@ -154,12 +185,13 @@ export default function Searchresults() {
                     <div className="flex flex-col items-start justify-center h-auto ml-[5px] font-Outfit text-[#898989] font-medium text-[15px] sm:text-[17px] md:text-[19px] lg:text-[22px] xl:text-[24px] 2xl:text-[28px] mb-[10px]">{similar_results_count} tools</div>
                     {click && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start justify-center w-auto mt-[10px] mr-[12px]">
-                            {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords === 1)))}
+                            {renderCards(data.filter(item => results.find(r => r.id === item.primary_key && r.matchedKeywords < max_match_count )))}
                         </div>
                     )}
                     <Footer />
                 </>
                 );
+                })();
             }
         }
     }

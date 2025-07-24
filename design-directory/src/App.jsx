@@ -15,7 +15,7 @@ import india from './assets/Indian flag.png';
 import heart from './assets/love.png';
 import twitter from './assets/XLogo.png'
 import insta from './assets/InstagramLogo.png';
-import linkedin from "./assets/LinkedinLogo.png"
+import linkedin from "./assets/LinkedinLogo.avif"
 
 import Colours from "./components/colours.jsx"
 import Mockups from "./components/mockups.jsx"
@@ -24,10 +24,12 @@ import Design_inspo from "./components/desin-inspo.jsx"
 import Icons from "./components/icons.jsx"
 import Illustration from "./components/illustrations.jsx";
 import Side_nav_arrow from "./components/side_nav_arrow.jsx";
-import logo from "./assets/logo.png";
+import logo from "./assets/logo.avif";
 import PrivacyPolicy from "./components/privacy policy.jsx";
 import About from "./components/about.jsx";
 import Terms_and_Conditions from "./components/terms and conditions.jsx"
+import Feedback from "./components/feedback.jsx";
+import Homepage from "./components/homepage.jsx"
 import { useState} from "react";
 import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
 
@@ -80,6 +82,7 @@ export default function App() {
   const aboutSectionOpened = Zustand_global_storage((state) => state.has_opened_about_section);
   const privacySectionOpened = Zustand_global_storage((state) => state.has_opened_privacy_section);
   const termsSectionOpened = Zustand_global_storage((state) => state.has_opened_terms_section);
+  const homepageOpened = Zustand_global_storage((state) => state.has_opened_homepage);
 
   // State to manage sidebar visibility
   const [sidebarOpen, setSidebarOpen] = useState(false); 
@@ -97,8 +100,8 @@ export default function App() {
         <div className="sm:hidden xs:hidden hidden md:block flex-col items-center justify-center w-1/5 bg-white min-h-screen max-h-screen position-fixed top-0 left-0 relative">
           
         {/* logo and title */}
-          <div className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] w-full">
-            <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:w-[25px] md:h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px]"/>
+          <div className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] w-full cursor-pointer" onClick={() => navigate("/")}>
+            <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:w-[25px] md:h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px] rotate-[5deg]"/>
             <span className="text-[22px] md:text-[22px] lg:text-[28px] xl:text-[33px] 2xl:text-[38px] pl-2 font-Fustat font-semibold">design index.</span>                    
           </div>
 
@@ -112,7 +115,7 @@ export default function App() {
                 onClick={() => navigate(path)}
               >
                 <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
-                <span className="ml-[10px] items-start justify-center font-Poppins font-semibold text-[18px] md:text-[20px] lg:text-[28px] xl:text-[31px] 2xl:text-[36px]">{label}</span>
+                <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[28px] xl:text-[31px] 2xl:text-[36px]">{label}</span>
                 {location.pathname === path && <Side_nav_arrow style={{ "--left-margin": leftMargin }} />}
               </div>
             ))}
@@ -145,8 +148,8 @@ export default function App() {
 
             <div className="flex flex-col justify-between w-full h-auto">
               <div className="flex flex-row items-center justify-between mb-4 w-auto h-auto">
-                <div className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
-                  <img src={logo} alt="design index logo" className="w-[30px] h-[30px]" />
+                <div onClick={navigate("/")} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
+                  <img src={logo} alt="design index logo" className="w-[30px] h-[30px] rotate-[5deg]" />
                   <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px] items-center justify-start">design index.</span>
                 </div>
                 <img onClick={toggleSidebar} src={sidebar_close_icon} alt="close sidebar" className="w-[36px] h-[36px] p-[5px]"/>
@@ -169,7 +172,7 @@ export default function App() {
 
             <div className="flex flex-col sm:hidden items-start justify-start w-[70vw] h-auto p-[5px] fixed bottom-[70px] left-[20px]">
                 <div className="flex flex-row items-center justify-start w-full h-auto mb-[5px]">
-                  <img src={logo} alt="design index logo" className="w-[22px] h-[22px]  sm:w-[25px] sm:h-[25px] lg:w-[30px] lg:h-[30px] xl:w-[35px] xl:h-[35px] 2xl:h-[40px] 2xl:w-[40px]" />
+                  <img src={logo} alt="design index logo" className="w-[22px] h-[22px]  sm:w-[25px] sm:h-[25px] lg:w-[30px] lg:h-[30px] xl:w-[35px] xl:h-[35px] 2xl:h-[40px] 2xl:w-[40px] rotate-[5deg]" />
                   <span className="text-[19px] sm:text-[19px] md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
                 </div>
                 <p className="md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[22px] text-[#575757] font-Outfit leading-4 font-medium">collection of the best design resources on the internet</p>
@@ -198,23 +201,23 @@ export default function App() {
 
         {/* right content area*/}
         <div className={`flex-col items-center justify-center w-full md:w-4/5 p-[5px] md:p-[5px] bg-white z-4 
-        ${(results.length !== 0 || aboutSectionOpened || privacySectionOpened || termsSectionOpened) ? "overflow-y-auto hide-scrollbar" : ""}`}>
+        ${(results.length !== 0 || aboutSectionOpened || privacySectionOpened || termsSectionOpened || homepageOpened) ? "overflow-y-auto hide-scrollbar" : "overflow-hidden"}`}>
 
           {/* Mobile header */}
-          <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-1 p-[10px] bg-white">
-            <img src={logo} alt="design index logo" className="w-[30px] h-[30px]" />
+          <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-5 p-[10px] bg-white">
+            <img src={logo} alt="design index logo" className="w-[30px] h-[30px rotate-[5deg]" />
             <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px]">design index.</span>
           </div>
 
           {/* Sidebar icon for mobile */}
-          <img onClick={toggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-3 bg-white" />
+          <img onClick={toggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-5 bg-white" />
 
           <SearchBar />
           
           {/* Conditional rendering based on selected page */}
           <Routes>
             <Route path="/colours" element={<Colours />} />
-            <Route path="/" element={<Colours />} />
+            <Route path="/" element={<Homepage />} />
             <Route path="/mockups" element={<Mockups />} />
             <Route path="/fonts" element={<Font />} />
             <Route path="/design-inspirations" element={<Design_inspo />} />
@@ -226,6 +229,7 @@ export default function App() {
             <Route path='/Terms-and-Conditions' element={<Terms_and_Conditions />} />
             <Route path='/Search-Results' element={<Searchresults />} />
             <Route path='/Search' element={<Searchimage />} />
+            <Route path='/Feedback' element={<Feedback />} />
           </Routes>
         </div>
         
