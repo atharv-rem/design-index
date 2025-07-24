@@ -124,7 +124,7 @@ function Colours() {
               visually appealing, and emotionally resonant design systems.
             </p>
             <p className="text-[15px] font-Outfit font-medium mr-[12px] leading-4 block sm:hidden">
-              A curated collection of colour palettes, gradients, and backgrounds to inspire your design process. 
+              A curated collection of colour palettes, gradients, and backgrounds to inspire your design process.
               Explore bold to subtle hues that help build consistent and visually appealing design systems.
             </p>
           </div>
