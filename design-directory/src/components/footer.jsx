@@ -22,8 +22,8 @@ export default function Footer() {
             name: "share", 
             path: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out design index, a collection of the best design resources on the internet! https://atharvrem.vercel.app")}` 
         },
-        { name: "feedback", path: "/Feedback" },
-        { name: "submit a tool", path: ""},
+        { name: "feedback", path: "/feedback" },
+        { name: "submit a tool", path: "/Submit-a-Tool" },
     ]
 
 

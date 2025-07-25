@@ -87,7 +87,7 @@ export default function Homepage() {
           <p className="text-[15px] xs:text-[20px] sm:text-[20px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[15px] xs:leading-[20px] sm:leading-[20px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] mb-[40px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
             We use NLP to process search queries and return the best results. We only support english.
           </p>
-          <div className="flex overflow-x-auto snap-x hide-scrollbar py-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
+          <div className="flex overflow-x-auto snap-x hide-scrollbar p-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
             <img src={image2} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image1} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image3} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
@@ -103,9 +103,9 @@ export default function Homepage() {
         <p className="text-[15px] xs:text-[20px] sm:text-[20px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[15px] xs:leading-[20px] sm:leading-[20px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
             Explore the code, contribute ideas, or just see how it all works
         </p>
-        <a href="https://github.com/atharv-rem/design-directory">
-          <div className="mb-[20px] shadow-sm w-auto flex flex-row items-center justify-center text-center z-4 mt-[15px] text-[10px] xs:text-[12px] sm:text-[15px] md:text-[17px] lg:text-[19px] xl:text-[21px] 2xl:text-[23px] font-semibold font-Outfit text-black hover:underline px-[10px] py-[5px]  rounded-[10px] md:rounded-[15px] lg:rounded-[17px] xl:rounded-[19px] border-1 border-[#e2e2e2] hover:translate-y-[-1px] hover:delay-300 transition-colors duration-300 cursor-pointer">
-            /design-directory
+        <a href="https://github.com/atharv-rem/design-index">
+          <div className="mb-[20px] shadow-sm w-auto flex flex-row items-center justify-center text-center z-4 mt-[15px] text-[15px] xs:text-[15px] sm:text-[15px] md:text-[17px] lg:text-[19px] xl:text-[21px] 2xl:text-[23px] font-semibold font-Outfit text-black hover:underline px-[10px] lg:px-[15px] py-[5px]  rounded-[12px] md:rounded-[15px] lg:rounded-[17px] xl:rounded-[19px] border-1 border-[#e2e2e2] hover:translate-y-[-4px] mduration-300 cursor-pointer transition-transform-ease-in-out">
+            /design-index
           </div>
         </a>
 

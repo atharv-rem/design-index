@@ -30,6 +30,7 @@ import About from "./components/about.jsx";
 import Terms_and_Conditions from "./components/terms and conditions.jsx"
 import Feedback from "./components/feedback.jsx";
 import Homepage from "./components/homepage.jsx"
+import SubmitATool from "./components/submit_a_tool.jsx";
 import { useState} from "react";
 import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
 
@@ -134,7 +135,7 @@ export default function App() {
             </div>
 
             {/* submit a tool button */}
-            <button className="w-full flex-grow px-[20px] bg-white border-[1.5px] border-[#e3e3e3] md:rounded-[20px] lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[35px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out">
+            <button className="w-full flex-grow px-[20px] bg-white border-[1.5px] border-[#e3e3e3] md:rounded-[20px] lg:rounded-[25px] xl:rounded-[30px] 2xl:rounded-[35px] p-[2px] flex flex-row items-center justify-center opacity-70 hover:opacity-100 hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out" onClick={() => {navigate("/Submit-a-Tool")}}>
               <img src={send} alt="submit icon" className="w-[30px] h-[30px] xl:w-[35px] xl:h-[35px] 2xl:w-[40px] 2xl:h-[40px] p-[5px] mr-[2px]" />
               <span className="md:text-[20px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-Outfit font-semibold">submit a tool</span>
             </button>
@@ -148,7 +149,7 @@ export default function App() {
 
             <div className="flex flex-col justify-between w-full h-auto">
               <div className="flex flex-row items-center justify-between mb-4 w-auto h-auto">
-                <div onClick={navigate("/")} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
+                <div onClick={() => {navigate("/"); setSidebarOpen(false);}} className="flex flex-row items-center justify-start w-auto h-auto mb-[5px] p-[10px]">
                   <img src={logo} alt="design index logo" className="w-[30px] h-[30px] rotate-[5deg]" />
                   <span className="text-[25px] text-black font-Fustat font-semibold ml-[5px] items-center justify-start">design index.</span>
                 </div>
@@ -192,7 +193,7 @@ export default function App() {
                 </div>
             </div>
 
-            <button className="w-[70vw] sm:w-[75vw] h-auto px-[20px] bg-white border-[1.5px] border-[#e3e3e3] p-[2px] flex flex-row items-center justify-center fixed bottom-[20px] left-[20px] sm:left-[20px] rounded-[20px]">
+            <button className="w-[70vw] sm:w-[75vw] h-auto px-[20px] bg-white border-[1.5px] border-[#e3e3e3] p-[2px] flex flex-row items-center justify-center fixed bottom-[20px] left-[20px] sm:left-[20px] rounded-[20px]" onClick={() => {navigate("/Submit-a-Tool"); setSidebarOpen(false);}}>
                 <img src={send} alt="submit icon" className="w-[30px] h-[30px]" />
                 <span className="text-[25px] font-Outfit font-semibold">submit a tool</span>
             </button>
@@ -230,6 +231,7 @@ export default function App() {
             <Route path='/Search-Results' element={<Searchresults />} />
             <Route path='/Search' element={<Searchimage />} />
             <Route path='/Feedback' element={<Feedback />} />
+            <Route path='/Submit-a-Tool' element={<SubmitATool />} />
           </Routes>
         </div>
         
