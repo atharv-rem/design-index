@@ -117,7 +117,7 @@ export default function App() {
               >
                 <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
                 <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[28px] xl:text-[31px] 2xl:text-[36px]">{label}</span>
-                {location.pathname === path && <Side_nav_arrow style={{ "--left-margin": leftMargin }} />}
+                {location.pathname === path}
               </div>
             ))}
 
