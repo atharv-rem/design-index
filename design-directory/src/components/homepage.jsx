@@ -54,7 +54,7 @@ export default function Homepage() {
           </p>
         </div>
         <div className="w-full flex flex-col items-center justify-center text-center mt-[10px] xs:mt-[20px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] leading-4 xs:leading-5 sm:leading-7 xl:leading-8  px-[30px] xs:px-[20px] sm:px-[100px] lg:px-[200px] 2xl:px-[300px]">
-          <p className="text-[15px] xs:text-[20px] sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-regular font-Outfit text-[#939393]">
+          <p className="text-[15px] xs:text-[20px] sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#939393]">
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
