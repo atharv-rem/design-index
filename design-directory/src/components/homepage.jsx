@@ -46,15 +46,15 @@ export default function Homepage() {
       {/* Hero Section */}
       <div className="flex flex-col items-center justify-center w-full h-screen bg-white sticky top-0">
         <div className="w-full flex flex-col items-center justify-center text-center">
-          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-CalSans mb-[5px]">
+          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-Geist mb-[5px]">
             Collection of the best
           </p>
-          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-CalSans mb-[10px] mt-0 leading-[10px] md:leading-[20px] 2xl:leading-[35px]">
+          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-Geist mb-[10px] mt-0 leading-[10px] md:leading-[20px] 2xl:leading-[35px]">
             design resources
           </p>
         </div>
         <div className="w-full flex flex-col items-center justify-center text-center mt-[10px] xs:mt-[20px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] leading-4 xs:leading-5 sm:leading-7 xl:leading-8  px-[30px] xs:px-[20px] sm:px-[100px] lg:px-[200px] 2xl:px-[300px]">
-          <p className="text-[15px] xs:text-[20px] sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-regular font-CalSans text-[#939393]">
+          <p className="text-[15px] xs:text-[20px] sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-regular font-Geist text-[#939393]">
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function Homepage() {
 
         </div>
         <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
-          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
+          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-Geist leading-7 xs:leading-8 text-black">
             search any way you want, we have it all
           </p>
           <p className="text-[15px] xs:text-[20px] sm:text-[20px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[15px] xs:leading-[20px] sm:leading-[20px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] mb-[40px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
@@ -96,7 +96,7 @@ export default function Homepage() {
         </div>
 
         <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
-          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
+          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-Geist leading-7 xs:leading-8 text-black">
             we are open source
           </p>
         </div>
