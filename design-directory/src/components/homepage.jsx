@@ -31,7 +31,7 @@ export default function Homepage() {
 
   return (
     <>
-    <Title>Colours | Design Index</Title>
+    <Title>Design Index</Title>
     <Meta name="description" content="Collection of the best design resources on the internet" />
     <Meta property="og:title" content="Design Index" />
     <Meta property="og:description" content="Collection of the best design resources on the internet" />
