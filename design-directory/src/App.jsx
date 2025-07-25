@@ -23,7 +23,6 @@ import Font from "./components/font.jsx"
 import Design_inspo from "./components/desin-inspo.jsx"
 import Icons from "./components/icons.jsx"
 import Illustration from "./components/illustrations.jsx";
-import Side_nav_arrow from "./components/side_nav_arrow.jsx";
 import logo from "./assets/logo.avif";
 import PrivacyPolicy from "./components/privacy policy.jsx";
 import About from "./components/about.jsx";
