@@ -5,10 +5,10 @@ import illustration from "../assets/illustration.avif";
 import icon from "../assets/icon.avif";
 import design from "../assets/design.avif";
 import colour from "../assets/colour.avif";
-import image1 from "../assets/IMG-20250723-WA0006.avif"
-import image2 from "../assets/IMG-20250723-WA0007.avif"
-import image3 from "../assets/IMG-20250723-WA0008.avif"
-import image4 from "../assets/IMG-20250723-WA0009.avif"
+import image1 from "../assets/IMG-20250723-WA0006_1.avif"
+import image2 from "../assets/IMG-20250723-WA0007_1.avif"
+import image3 from "../assets/IMG-20250723-WA0008_1.avif"
+import image4 from "../assets/IMG-20250723-WA0009_1.avif"
 import { useNavigate } from "react-router-dom";
 import Footer from "./footer";
 import { Title, Meta } from 'react-head';
