@@ -20,7 +20,7 @@ export default function Footer() {
     const connect = [
         { 
             name: "share", 
-            path: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out design index, a collection of the best design resources on the internet! https://atharvrem.vercel.app")}` 
+            path: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Check out design index, a collection of the best design resources on the internet! https://designindex.xyz")}` 
         },
         { name: "feedback", path: "/feedback" },
         { name: "submit a tool", path: "/Submit-a-Tool" },
