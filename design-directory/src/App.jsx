@@ -43,37 +43,31 @@ export default function App() {
       path: "/colours",
       label: "colours",
       icon: color,
-      leftMargin: "75px"
     },
     {
       path: "/mockups",
       label: "mockups",
       icon: mockup,
-      leftMargin: "58px"
     },
     {
       path: "/fonts",
       label: "font",
-      icon: font,
-      leftMargin: "105px"
+      icon: font
     },
     {
       path: "/design-inspirations",
       label: "inspirations",
-      icon: design_inspo,
-      leftMargin: "35px",
+      icon: design_inspo
     },
     {
       path: "/icons",
       label: "icons",
-      icon: icon,
-      leftMargin: "92px"
+      icon: icon
     },
     {
       path: "/illustrations",
       label: "illustrations",
-      icon: illustration,
-      leftMargin: "35px",
+      icon: illustration
     },
   ];
   
@@ -99,23 +93,23 @@ export default function App() {
         {/* Left sidebar for navigation*/}
         <div className="sm:hidden xs:hidden hidden md:block flex-col items-center justify-center w-1/5 bg-white min-h-screen max-h-screen position-fixed top-0 left-0 relative">
           
-        {/* logo and title */}
-          <div className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] w-full cursor-pointer" onClick={() => navigate("/")}>
+          {/* logo and title */}
+          <div className="flex flex-row items-center justify-start h-auto leading-none mt-[7px] py-[5px] px-[2px] 2xl:pl-4 2xl:pt-3 w-full cursor-pointer" onClick={() => navigate("/")}>
             <img alt="Collection of the best design tools on the itnernet" src={logo} className="w-[25px] h-[25px] md:w-[25px] md:h-[25px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] ml-[10px] rotate-[5deg]"/>
             <span className="text-[22px] md:text-[22px] lg:text-[28px] xl:text-[33px] 2xl:text-[38px] pl-2 font-Fustat font-semibold">design index.</span>                    
           </div>
 
           {/* Navigation bar */}
-          <div className="flex flex-col gap-1 items-start justify-start w-auto h-full mt-[17px] xl:mt-[20px] mr-[5px] mb-[10px] ml-[5px] xl:ml-[10px] overflow-y-auto hide-scrollbar">
+          <div className="flex flex-col gap-1 items-start justify-start w-auto h-full mt-[17px] xl:mt-[20px] mr-[5px] mb-[10px] ml-[5px] xl:ml-[10px] 2xl:ml-5 overflow-y-auto hide-scrollbar">
               
-              {navItems.map(({ path, label, icon, leftMargin, }) => (
+              {navItems.map(({ path, label, icon }) => (
               <div
                 key={path}
                 className="flex flex-row items-center justify-start w-full h-auto cursor-pointer hover:bg-[#F6F6F6] rounded-[10px] p-[3px]"
                 onClick={() => navigate(path)}
               >
                 <img src={icon} alt={label} className="ml-[5px] w-[25px] h-[25px] md:w-[30px] md:h-[30px] lg:w-[35px] lg:h-[35px] xl:w-[40px] xl:h-[40px] 2xl:w-[45px] 2xl:h-[45px] p-[4px] xl:p-[6px] border-[1.5px] border-[#EBEBEB] rounded-[8px]"/>
-                <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[28px] xl:text-[31px] 2xl:text-[36px]">{label}</span>
+                <span className="ml-[10px] items-start justify-center font-Outfit font-semibold text-[18px] md:text-[20px] lg:text-[25px] xl:text-[31px] 2xl:text-[38px]">{label}</span>
                 {location.pathname === path}
               </div>
             ))}
@@ -128,7 +122,7 @@ export default function App() {
             {/* warning text */}
             <div className="flex flex-col items-start justify-center h-auto w-full flex-grow p-[10px] lg:px-[15px] lg:py-[15px] 2xl:px-[20px] 2xl:py-[20px] bg-white border-[1px] border-[#eaeaea] md:rounded-[15px] lg:rounded-[20px] xl:rounded-[25px] 2xl:rounded-[30px] mb-[10px]">
               <span className="md:text-[15px] lg:text-[20px] xl:text-[25px] 2xl:text-[30px] font-Outfit mb-[5px] text-black font-semibold leading-none">warning!</span>
-              <span className="md:text-[13px] lg:text-[18px] xl:text-[23px] 2xl:text-[28px] mt-[3px] font-Outfit text-[#6f6f6f] font-medium md:leading-3 lg:leading-5 xl:leading-6 2xl:leading-8">
+              <span className="md:text-[13px] lg:text-[18px] xl:text-[23px] 2xl:text-[25px] mt-[3px] font-Outfit text-[#6f6f6f] font-medium md:leading-[15px] lg:leading-5 xl:leading-6 2xl:leading-7">
                 no emails, no bullshi* we only offer the best design resources
               </span>
             </div>
