@@ -1,13 +1,9 @@
 {
-  "headers": [
+  "redirects": [
     {
       "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
-        }
-      ]
+      "destination": "/sitemap.txt",
+      "permanent": true
     }
   ]
 }
