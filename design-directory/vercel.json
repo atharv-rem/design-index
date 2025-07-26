@@ -2,8 +2,9 @@
   "redirects": [
     {
       "source": "/sitemap.xml",
-      "destination": "/sitemap.txt",
+      "destination": "/api/sitemap",
       "permanent": true
     }
   ]
 }
+
