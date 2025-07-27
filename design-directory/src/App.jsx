@@ -75,6 +75,8 @@ export default function App() {
   "/design-inspirations",
   "/icons",
   "/illustrations",
+  "/submit-a-tool",
+  "/feedback",
 ];
 const should_disable_scroll = disable_scroll.includes(location.pathname);
 
