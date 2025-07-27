@@ -23,5 +23,5 @@ Whether you're just starting out or already working on client projects, I hope t
 * ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=whi) - website is hosted on vercel
 
 ## Licence
-[!IMPORTANT]
-Please read this licence before contributing or cloning this github repo
+> [!IMPORTANT]
+> Please read this licence before contributing or cloning this github repo
