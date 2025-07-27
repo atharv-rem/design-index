@@ -30,14 +30,11 @@ import Terms_and_Conditions from "./components/terms and conditions.jsx"
 import Feedback from "./components/feedback.jsx";
 import Homepage from "./components/homepage.jsx"
 import SubmitATool from "./components/submit_a_tool.jsx";
-import { useState} from "react";
+import { useState,} from "react";
 import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
-
-import Zustand_global_storage from "./zustand-global-storage.js"
 
 export default function App() {
   const navigate = useNavigate();
-  const location = useLocation();
   const navItems = [
     {
       path: "/colours",
@@ -70,13 +67,19 @@ export default function App() {
       icon: illustration
     },
   ];
-  
-  //imported this so that i can enable scroll in search results page as  in default mode its turned off
-  const results = Zustand_global_storage((state) => state.results);
-  const aboutSectionOpened = Zustand_global_storage((state) => state.has_opened_about_section);
-  const privacySectionOpened = Zustand_global_storage((state) => state.has_opened_privacy_section);
-  const termsSectionOpened = Zustand_global_storage((state) => state.has_opened_terms_section);
-  const homepageOpened = Zustand_global_storage((state) => state.has_opened_homepage);
+  const location = useLocation();
+  const disable_scroll = [
+  "/colours",
+  "/mockups",
+  "/fonts",
+  "/design-inspirations",
+  "/icons",
+  "/illustrations",
+];
+const should_disable_scroll = disable_scroll.includes(location.pathname);
+
+
+
 
   // State to manage sidebar visibility
   const [sidebarOpen, setSidebarOpen] = useState(false); 
@@ -195,7 +198,7 @@ export default function App() {
 
         {/* right content area*/}
         <div className={`flex-col items-center justify-center w-full md:w-4/5 p-[5px] md:p-[5px] bg-white z-4 
-        ${(results.length !== 0 || aboutSectionOpened || privacySectionOpened || termsSectionOpened || homepageOpened) ? "overflow-y-auto hide-scrollbar" : "overflow-hidden"}`}>
+        ${should_disable_scroll ? "overflow-hidden": "overflow-y-auto hide-scrollbar"}`}>
 
           {/* Mobile header */}
           <div className="md:hidden flex flex-row items-start justify-start w-full h-[100px] mb-[5px] fixed top-0 pt-[20px] left-[5px] z-5 p-[10px] bg-white">

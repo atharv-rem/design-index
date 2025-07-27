@@ -1,4 +1,3 @@
-import Zustand_global_storage from "../zustand-global-storage";
 import font from "../assets/font.avif";
 import mockup from "../assets/mockup.avif";
 import illustration from "../assets/illustration.avif";
@@ -14,10 +13,6 @@ import Footer from "./footer";
 import { Title, Meta } from 'react-head';
 
 export default function Homepage() {
-
-  const setHasOpenedHomepage = Zustand_global_storage(state => state.setHasOpenedHomepage);
-  setHasOpenedHomepage(true);
-
   const navigate = useNavigate();
 
   const images = [

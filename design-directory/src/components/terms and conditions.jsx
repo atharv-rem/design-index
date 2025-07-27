@@ -1,9 +1,6 @@
 import Footer from './footer.jsx';
-import Zustand_global_storage from '../zustand-global-storage.js';
+
 export default function Terms_and_Conditions() {
-    const setHasOpenedTermsSection = Zustand_global_storage((state) => state.setHasOpenedTermsSection);
-    // Zustand hook to check if the terms section has been opened
-    setHasOpenedTermsSection(true);
     return (
         <>
             <div className="flex flex-col items-start justify-center w-auto h-auto bg-white ml-[12px] mr-[20px] mt-[100px] md:mt-[50px] lg:mt-[65px] xl:mt-[65px] 2xl:mt-[70px]">

@@ -1,9 +1,6 @@
 import Footer from './footer.jsx';
-import Zustand_global_storage from '../zustand-global-storage.js';
 export default function PrivacyPolicy() {
-    const setHasOpenedPrivacySection = Zustand_global_storage((state) => state.setHasOpenedPrivacySection);
-    // Zustand hook to check if the privacy section has been opened
-    setHasOpenedPrivacySection(true);
+    
     return (
         <>
             <div className="flex flex-col items-start justify-start w-auto h-auto bg-white ml-[12px] mr-[20px] mt-[100px] md:mt-[50px] lg:mt-[65px] xl:mt-[65px] 2xl:mt-[70px]">
