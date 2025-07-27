@@ -5,6 +5,9 @@
       "destination": "/api/sitemap",
       "permanent": true
     }
+  ],
+
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
-
