@@ -21,7 +21,6 @@ export default function Searchresults() {
     const results = Zustand_global_storage((state) => state.results);
     const keywords = Zustand_global_storage((state) => state.keywords);
     const hasSearched = Zustand_global_storage((state) => state.hasSearched);
-    const relevant_results_count = results.filter((result) => result.matchedKeywords > 1).length;
     const similar_results_count = results.filter((result) => result.matchedKeywords === 1).length;
     const [click, setClick] = useState(false);
     const handle_similar_results_click = () => setClick(!click);
@@ -62,12 +61,13 @@ export default function Searchresults() {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
     };
-
+    
+    //if no results are found or no keywords are entered, this will show a message to the user
     if (hasSearched && (results.length === 0 || keywords.length === 0)) {
         return (
             <div className="flex flex-col items-center justify-center h-screen">
-            <span className="text-[20px] font-Outfit font-semibold text-black">No results found</span>
-            <span className="text-[16px] font-Outfit font-medium text-gray-600 mt-2">Try searching with different keywords.</span>
+            <span className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] xl:text-[40px] 2xl:text-[45px] font-Outfit font-semibold text-black">No results found</span>
+            <span className="text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] font-Outfit font-medium text-gray-600 mt-2">Try adjusting your search query and try again.</span>
             </div>
         );
     }
@@ -128,7 +128,6 @@ export default function Searchresults() {
         }
         else
             {
-
             //this lets me show only relevant results when match count is only 1 in the results array
             if (results.every(r => r.matchedKeywords <= 1)) {
                 return(

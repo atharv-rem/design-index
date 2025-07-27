@@ -1,7 +1,7 @@
 import search from "../assets/search-icon.svg";
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { supabase } from "../supabaseClient";
 import Zustand_global_storage from "../zustand-global-storage"; 
 import { useNavigate } from "react-router-dom";
@@ -12,10 +12,11 @@ const its = nlp.its;
 function SearchBar() {
   const [tempinput_value, setTempInputValue] = useState("");
   const [finalinput_value, setFinalInputValue] = useState("");
+  const loading = Zustand_global_storage(state => state.loading);
+  const setLoading = Zustand_global_storage(state => state.setLoading);
   const [keywords, setKeywords] = useState([]);
   const setResults = Zustand_global_storage(state => state.setResults);
   const setGlobalKeywords = Zustand_global_storage(state => state.setKeywords);
-  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const handleSearchImage = () => {
@@ -29,8 +30,7 @@ function SearchBar() {
       return;
     }
 
-    setLoading(true);
-
+    setLoading(true)
     // Process the input value to extract keywords 
     const doc = nlp.readDoc(finalinput_value);
     let mainkeywords = doc.tokens()
@@ -82,7 +82,7 @@ function SearchBar() {
         console.log("Sorted results:", sortedResults);
         if (sortedResults.length >= 0) { 
           navigate("/search-results"); 
-          setLoading(false);
+          setLoading(false); // Stop loading when results are fetched
         }
     }
     fetchResults(finalKeywords);
@@ -117,6 +117,15 @@ function SearchBar() {
           rows={1}
         />
       </div>
+
+      {/* Loader */}
+      {loading && (
+        <>
+          <div className="mt-[80px] w-full flex justify-center h-screen items-center">
+            <div className="w-10 h-10 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
+          </div>
+        </>
+      )}
     </>
   );
 }
