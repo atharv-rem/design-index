@@ -22,6 +22,8 @@ Whether you're just starting out or already working on client projects, I hope t
 * ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) - simiplified styling on our webpage
 * ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=whi) - website is hosted on vercel
 
-## Licence
+## Guidelines
 > [!IMPORTANT]
 > Please read this licence before contributing or cloning this github repo
+> [!CAUTION]
+> cloning of this repo might not give you expected results as the database is held in supabase
