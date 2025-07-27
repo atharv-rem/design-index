@@ -15,8 +15,8 @@ Whether you're just starting out or already working on client projects, I hope t
 # Tech stack
 * ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) - it helps in efficient processing of search queries.
 * ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white) - uses R2 object storage to store images
-* Zustand - helps in managing global state
-* Tanstack Virtualization - helps in efficient loading of elements
+* __Zustand__ - helps in managing global state
+* __Tanstack Virtualization__ - helps in efficient loading of elements
 * ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)  - whole website is built using react
 * ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) - handles routing for the webpage
 * ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) - simiplified styling on our webpage
