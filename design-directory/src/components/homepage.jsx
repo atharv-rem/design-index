@@ -8,7 +8,7 @@ import image1 from "../assets/IMG-20250723-WA0006_1.avif"
 import image2 from "../assets/IMG-20250723-WA0007_1.avif"
 import image3 from "../assets/IMG-20250723-WA0008_1.avif"
 import image4 from "../assets/IMG-20250723-WA0009_1.avif"
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import Footer from "./footer";
 import { Title, Meta } from 'react-head';
 
@@ -16,7 +16,7 @@ export default function Homepage() {
   const navigate = useNavigate();
 
   const images = [
-    { src: font, alt: "font illustration",path:"/colours" },
+    { src: font, alt: "font illustration",path:"/fonts" },
     { src: mockup, alt: "mockup illustration",path:"/mockups" },
     { src: illustration, alt: "illustration",path:"/illustrations" },
     { src: icon, alt: "icon illustration",path:"/icons" },
@@ -64,14 +64,18 @@ export default function Homepage() {
         </div>
 
         <div className="grid grid-cols-2 gap-[15px] sm:gap-[40px] items-center justify-center w-auto h-auto bg-white px-[5px] sm:px-[50px] md:px-[80px] lg:px-[130px] xl:px-[180px] 2xl:px-[220px] pt-[20px]">
-          {images.map((img, index) => (
-            <img
-              key={index}
-              src={img.src}
-              alt={img.alt}
-              className="w-auto h-auto object-cover border-1 border-[#c5c5c5] rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] 2xl:rounded-[50px] hover:scale-105 transition-transform duration-300 cursor-pointer"
+          {images.map((img) => (
+            <div
               onClick={() => navigate(img.path)}
-            />
+              className="cursor-pointer transition-transform hover:scale-105"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-auto h-auto object-cover border border-[#c5c5c5] rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] 2xl:rounded-[50px]"
+              />
+            </div>
+
           ))}
 
         </div>
