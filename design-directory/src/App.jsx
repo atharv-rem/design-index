@@ -80,9 +80,6 @@ export default function App() {
 ];
 const should_disable_scroll = disable_scroll.includes(location.pathname);
 
-
-
-
   // State to manage sidebar visibility
   const [sidebarOpen, setSidebarOpen] = useState(false); 
   const toggleSidebar = () => {

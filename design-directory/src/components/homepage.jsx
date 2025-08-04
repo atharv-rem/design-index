@@ -66,6 +66,7 @@ export default function Homepage() {
         <div className="grid grid-cols-2 gap-[15px] sm:gap-[40px] items-center justify-center w-auto h-auto bg-white px-[5px] sm:px-[50px] md:px-[80px] lg:px-[130px] xl:px-[180px] 2xl:px-[220px] pt-[20px]">
           {images.map((img) => (
             <div
+              key={img.alt}
               onClick={() => navigate(img.path)}
               className="cursor-pointer transition-transform hover:scale-105"
             >
@@ -75,9 +76,7 @@ export default function Homepage() {
                 className="w-auto h-auto object-cover border border-[#c5c5c5] rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] 2xl:rounded-[50px]"
               />
             </div>
-
           ))}
-
         </div>
         <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
           <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
