@@ -25,5 +25,6 @@ Whether you're just starting out or already working on client projects, I hope t
 ## Guidelines
 > [!IMPORTANT]
 > Please read this licence before contributing or cloning this github repo
+
 > [!CAUTION]
 > cloning of this repo might not give you expected results as the database is held in supabase
