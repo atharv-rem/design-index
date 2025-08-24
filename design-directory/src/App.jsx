@@ -13,23 +13,23 @@ import twitter from './assets/XLogo.png'
 import insta from './assets/InstagramLogo.png';
 import linkedin from "./assets/LinkedinLogo.avif"
 import warning from "./assets/octagon-warning.svg"
-
-import SearchBar from "./components/search bar.jsx";
-import Searchresults from "./components/search results.jsx";
-import Searchimage from "./components/search_suggestions.jsx";
-import Colours from "./components/colours.jsx"
-import Mockups from "./components/mockups.jsx"
-import Font from "./components/font.jsx"
-import Design_inspo from "./components/desin-inspo.jsx"
-import Icons from "./components/icons.jsx"
-import Illustration from "./components/illustrations.jsx";
-import logo from "./assets/logo.avif";
-import PrivacyPolicy from "./components/privacy policy.jsx";
-import About from "./components/about.jsx";
-import Terms_and_Conditions from "./components/terms and conditions.jsx"
-import Feedback from "./components/feedback.jsx";
-import Homepage from "./components/homepage.jsx"
-import SubmitATool from "./components/submit_a_tool.jsx";
+import logo from "./assets/logo.avif"
+import { lazy, Suspense } from "react";
+const Colours = lazy(() => import("./components/colours.jsx"));
+const Mockups = lazy(() => import("./components/mockups.jsx"));
+const Font = lazy(() => import("./components/font.jsx"));
+const SearchBar = lazy(() => import("./components/search bar.jsx"));
+const Searchresults = lazy(() => import("./components/search results.jsx"));
+const Searchimage = lazy(() => import("./components/search_suggestions.jsx"));
+const Design_inspo = lazy(() => import("./components/desin-inspo.jsx"));
+const Icons = lazy(() => import("./components/icons.jsx"));
+const Illustration = lazy(() => import("./components/illustrations.jsx"));
+const PrivacyPolicy = lazy(() => import("./components/privacy policy.jsx"));
+const About = lazy(() => import("./components/about.jsx"));
+const Terms_and_Conditions = lazy(() => import("./components/terms and conditions.jsx"));
+const Feedback = lazy(() => import("./components/feedback.jsx"));
+const Homepage = lazy(() => import("./components/homepage.jsx"));
+const SubmitATool = lazy(() => import("./components/submit_a_tool.jsx"));
 
 import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
 import Zustand_global_storage from "./zustand-global-storage.js"
@@ -220,9 +220,10 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
           <SearchBar />
           
           {/* Conditional rendering based on selected page */}
-          <Routes>
-            <Route path="/colours" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Colours /></div>} />
-            <Route path="/" element={<Homepage />} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/colours" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Colours /></div>} />
+              <Route path="/" element={<Homepage />} />
             <Route path="/mockups" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Mockups /></div>} />
             <Route path="/fonts" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Font /></div>} />
             <Route path="/design-inspirations" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Design_inspo /></div>} />
@@ -242,6 +243,7 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
             <Route path='/Feedback' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Feedback /></div>} />
             <Route path='/Submit-a-Tool' element={<SubmitATool />} />
           </Routes>
+        </Suspense>
         </div>
         
       </div>
