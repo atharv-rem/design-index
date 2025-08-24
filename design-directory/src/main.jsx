@@ -23,27 +23,14 @@ const options = {
   disable_session_recording: false, // keep recordings enabled
 }
 
-const GA_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID
 const POSTHOG_KEY = import.meta.env.VITE_PUBLIC_POSTHOG_KEY
 
-// --- Lazy load GA ---
-if (GA_ID && location.hostname !== 'localhost') {
+// --- Lazy load PostHog only ---
+if (POSTHOG_KEY && location.hostname !== 'localhost') {
   window.addEventListener('load', () => {
     import('posthog-js').then((posthog) => {
-      if (POSTHOG_KEY) {
-        posthog.init(POSTHOG_KEY, options)
-      }
+      posthog.init(POSTHOG_KEY, options)
     })
-
-    const script = document.createElement('script')
-    script.async = true
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
-    document.head.appendChild(script)
-
-    window.dataLayer = window.dataLayer || []
-    function gtag(){ window.dataLayer.push(arguments) }
-    gtag('js', new Date())
-    gtag('config', GA_ID)
   })
 }
 
