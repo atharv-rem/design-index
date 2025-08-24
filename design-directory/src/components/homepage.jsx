@@ -81,6 +81,7 @@ export default function Homepage() {
           height="auto" 
           viewBox="0 0 250 54" 
           xmlns="http://www.w3.org/2000/svg" 
+          aria-label="Leave a review on Product Hunt"
           className="rounded-[18px] xl:rounded-[22px] 2xl:rounded-[28px] border-[1px] border-[#ededed] shadow-sm"
         >
           <g fill="none" fillRule="evenodd">
@@ -170,10 +171,31 @@ export default function Homepage() {
             <img src={scrollh} alt="" className="w-[30px] h-[30px]" />
           </div>
           <div className="flex flex-row overflow-x-auto snap-x hide-scrollbar px-[10px] pb-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
-            <img src={image2} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
-            <img src={image1} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
-            <img src={image3} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
-            <img src={image4} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
+            <img 
+              src={image2} 
+              alt="design example" 
+              loading="lazy"
+              className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" 
+            />
+            <img 
+              src={image1} 
+              alt="design example" 
+              loading="lazy"
+              className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" 
+            />
+            <img 
+              src={image3} 
+              alt="design example" 
+              loading="lazy"
+              className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" 
+            />
+            <img 
+              src={image4} 
+              alt="design example" 
+              loading="lazy"
+              className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" 
+            />
+
           </div>
         </div>
 

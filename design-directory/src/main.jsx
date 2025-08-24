@@ -13,16 +13,17 @@ const options = {
 const GA_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID;
 
 if (GA_ID && location.hostname !== 'localhost') {
-  // Load GA script dynamically
-  const script = document.createElement('script');
-  script.setAttribute('async', '');
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  document.head.appendChild(script);
+  window.addEventListener('load', () => {
+    const script = document.createElement('script');
+    script.setAttribute('async', '');
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+    document.head.appendChild(script);
 
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ window.dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', GA_ID);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  });
 }
 
 
