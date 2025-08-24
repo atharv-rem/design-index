@@ -28,7 +28,7 @@ const PrivacyPolicy = lazy(() => import("./components/privacy policy.jsx"));
 const About = lazy(() => import("./components/about.jsx"));
 const Terms_and_Conditions = lazy(() => import("./components/terms and conditions.jsx"));
 const Feedback = lazy(() => import("./components/feedback.jsx"));
-const Homepage = lazy(() => import("./components/homepage.jsx"));
+import Homepage from "./components/homepage.jsx"
 const SubmitATool = lazy(() => import("./components/submit_a_tool.jsx"));
 
 import {Routes, Route, useNavigate,useLocation} from "react-router-dom";
