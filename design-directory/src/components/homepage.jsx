@@ -165,33 +165,16 @@ export default function Homepage() {
           <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] text-center leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[25px] sm:mr-[25px] md:ml-[70px] md:mr-[70px] lg:ml-[80px] lg:mr-[80px] xl:ml-[110px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[110px] mb-[40px] md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[70px]">
             We use NLP to process search queries and return the best results. We only support english.
           </p>
-          <div className="sm:hidden flex flex-row justify-center items-center">
+          <div className="flex flex-row justify-center items-center">
             <span className="font-Outfit font-semibold text-black">scroll horizontally</span>
             <img src={scrollh} alt="" className="w-[30px] h-[30px]" />
           </div>
-          <div className="sm:hidden flex flex-row overflow-x-auto snap-x hide-scrollbar px-[10px] pb-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
+          <div className="flex flex-row overflow-x-auto snap-x hide-scrollbar px-[10px] pb-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
             <img src={image2} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image1} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image3} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image4} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
           </div>
-          <div style={{ position: "relative", paddingBottom: "61.7%" }} className="hidden sm:block">
-            <iframe
-              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-              allowFullScreen
-              src="https://supercut.ai/embed/atharv-rem/hED-gUZ1ePhSLIJXgXNg7E?embed=full"
-              style={{
-                position: "absolute",
-                width: "100%",
-                height: "100%",
-                top: 0,
-                left: 0,
-                borderRadius: "10px",
-              }}
-              title="New ツSupercut"
-            ></iframe>
-          </div>
-
         </div>
 
         <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:m</div>t-[80px] ml-[40px] mr-[40px]">
