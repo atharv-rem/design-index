@@ -3,7 +3,7 @@ export default function About() {
 
     return (
         <>
-            <div className="flex flex-col items-start justify-center w-auto h-auto bg-white ml-[12px] mr-[20px] mt-[100px] md:mt-[50px] lg:mt-[65px] xl:mt-[65px] 2xl:mt-[70px]">
+            <div className="flex flex-col items-start justify-center w-auto h-auto bg-white ml-[12px] mr-[20px] pt-[20px] md:pt-0">
                 <p className="text-[32px] md:text-[32px] lg:text-[34px] xl:text-[45px] 2xl:text-[50px] font-Outfit font-bold mb-[5px]">About Us</p>
                 <p className="text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[25px] font-Outfit font-semibold text-justify text-[#525252] mb-2">
                     Hi, I’m Atharv Remeshan, a designer and developer based in Mumbai, India. I created this website to help fellow designers find the best design resources available on the internet.

@@ -1,7 +1,7 @@
-import search from "../assets/search-icon.svg";
+import search from "../assets/search-ai-line.svg";
 import winkNLP from 'wink-nlp';
 import model from 'wink-eng-lite-web-model';
-import { useState, useEffect, use } from "react";
+import { useState, useEffect} from "react";
 import { supabase } from "../supabaseClient";
 import Zustand_global_storage from "../zustand-global-storage"; 
 import { useNavigate } from "react-router-dom";

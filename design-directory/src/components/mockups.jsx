@@ -5,8 +5,8 @@ import { useRef,useState,useEffect,useMemo } from 'react';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useSearchParams } from 'react-router-dom';
 import left_arrow from '../assets/ArrowLeft.png'
-import share_icon from "../assets/share icon.png"
-import link_arrow from "../assets/ArrowCircleUpRight.png"
+import share_icon from "../assets/share.svg"
+import link_arrow from "../assets/link.svg"
 
 function addRefParam(url, ref = "designindex") { //this adds "?ref=designindex" so that analytics can track the click from this website
   try {
@@ -117,7 +117,7 @@ function Mockups() {
         <>
           {/* title section */}
           <div className="flex flex-col items-start justify-center h-auto w-full sm:w-auto p-[5px]">
-            <span className="font-semibold text-[32px] md:text-[32px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-Outfit mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]">Mockups</span>
+            <span className="font-semibold text-[32px] md:text-[32px] lg:text-[40px] xl:text-[50px] 2xl:text-[60px] font-Outfit">Mockups</span>
             <p className=" hidden sm:block text-[15px] md:text-[15px] lg:text-[17px] xl:text-[20px] 2xl:text-[25px] font-Outfit font-medium mr-[12px] leading-4 md:leading-4 lg:leading-5 xl:leading-6 2xl:leading-7 text-justify">
               A curated library of high-quality device and product mockups to showcase your designs in real-world contexts. 
               From phones and laptops to packaging and apparel, this section offers versatile templates to 
@@ -236,27 +236,24 @@ function Mockups() {
                     <div className="flex font-Outfit font-semibold text-[15px] sm:text-[14px] lg:text-[15px] xl:text-[17px] 2xl:text-[21px] pt-[5px] pb-[5px] text-[#ab2a2a] bg-[#ffe5e5] w-[45px] h-[25px] lg:w-[45px] lg:h-[25px] xl:w-[50px] xl:h-[30px] 2xl:w-[60px] 2xl:h-[30px] justify-center items-center rounded-[8px] mt-[5px] lg:mt-[3px] 2xl:mt-[8px]">paid</div>
                   )
                   : null}
-                <p className=' text-[17px] sm:text-[15px] md:text-[15px] lg:text-[18px] xl:text-[23px] 2xl:text-[26px] font-Outfit font-medium sm:mr-[12px] mt-[5px] xl:mt-[10px] leading-[20px] lg:leading-5 xl:leading-6 2xl:leading-7 justify-evenly'>
+                <p className=' text-[20px] sm:text-[15px] md:text-[15px] lg:text-[18px] xl:text-[23px] 2xl:text-[26px] font-Outfit font-medium sm:mr-[12px] mt-[5px] xl:mt-[10px] leading-[23px] sm:leading-[15px] lg:leading-5 xl:leading-6 2xl:leading-7 text-justify'>
                   {selectedItem.extended_description.toLowerCase()}
                 </p>
-                <div className='flex w-full flex-row items-center justify-center sm:justify-start mt-[15px]'>
+                <div className='flex w-full flex-col gap-y-[20px] gap-x-[10px] xl:gap-x-[20px] sm:flex-row items-center justify-center sm:justify-start mt-[15px]'>
                   <div onClick={handleCopyLink} 
-                    className='items-center justify-center w-auto h-auto px-[10px] py-[3px] bg-white border-[1.5px] border-[#898989] rounded-[20px] xl:rounded-[25px] flex flex-row hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out'>
-                    <img src={share_icon} alt='share icon' className='w-[16px] h-[16px] md:w-[16px] md:h-[16px] lg:w-[19px] lg:h-[19px] xl:w-[22px] xl:h-[22px] 2xl:w-[26px] 2xl:h-[26px]' />
-                    <span className='text-[16px] md:text-[16px] lg:text-[19px] xl:text-[24px] 2xl:text-[28px] text-black font-Outfit font-semibold ml-[5px]'>{copied ? "link copied!" : "share this tool"}</span>
+                    className='items-center justify-center w-[190px] xs:w-[260px] sm:w-auto h-auto px-[10px] py-[3px] bg-white shadow-sm border-[1.5px] border-[#e7e7e7] xs:rounded-[22px] rounded-[20px] sm:rounded-[13px] xl:rounded-[17px] flex flex-row hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out'>
+                    <img src={share_icon} alt='share icon' className='w-[25px] h-[25px] sm:w-[20px] sm:h-[20px] md:w-[16px] md:h-[16px] lg:w-[19px] lg:h-[19px] xl:w-[22px] xl:h-[22px] 2xl:w-[26px] 2xl:h-[26px]' />
+                    <span className='text-[20px] xs:text-[25px] sm:text-[15px] md:text-[16px] lg:text-[19px] xl:text-[24px] 2xl:text-[28px] text-black font-Outfit font-semibold ml-[5px]'>{copied ? "link copied!" : "share this tool"}</span>
                   </div>
                   <a href={addRefParam(selectedItem.website)} target="_blank" rel="noopener noreferrer">
-                    <div className='flex flex-row items-center justify-center ml-[10px] w-auto px-[10px] py-[3px] h-auto bg-white border-[1.5px] border-[#898989]  rounded-[20px] xl:rounded-[25px]  hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out '>
-                      <img src={link_arrow} alt='link arrow' className='w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[23px] lg:h-[23px] xl:w-[26px] xl:h-[26px] 2xl:w-[30px] 2xl:h-[30px]' />
-                      <span className='text-[16px] md:text-[16px] lg:text-[19px] xl:text-[24px] 2xl:text-[28px] font-Outfit text-black font-semibold ml-[5px]'>visit website</span>
+                     <div className='flex flex-row items-center justify-center w-[190px] xs:w-[260px] sm:w-auto px-[10px] py-[3px] h-auto bg-white shadow-sm border-[1.5px] border-[#e7e7e7] rounded-[20px] xs:rounded-[22px] sm:rounded-[13px] xl:rounded-[17px] hover:cursor-pointer hover:translate-y-[-2px] transition-all duration-200 ease-in-out'>
+                      <img src={link_arrow} alt='link arrow' className='w-[23px] h-[23px] sm:w-[20px] sm:h-[20px] md:w-[16px] md:h-[16px] lg:w-[19px] lg:h-[19px] xl:w-[22px] xl:h-[22px] 2xl:w-[26px] 2xl:h-[26px]' />
+                      <span className='text-[20px] xs:text-[25px] sm:text-[15px] md:text-[16px] lg:text-[19px] xl:text-[24px] 2xl:text-[28px] font-Outfit text-black font-semibold ml-[5px]'>visit website</span>
                     </div>
                   </a>
                 </div>
               </div>
             </div>
-          </div>
-          <div className='fixed bottom-[10px] sm:bottom-[20px] sm:mr-[20px] w-auto md:w-[78vw] flex flex-row'>
-            <Footer />
           </div>
         </>
       )

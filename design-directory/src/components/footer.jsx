@@ -9,14 +9,6 @@ import {useNavigate} from "react-router-dom"
 
 export default function Footer() {
     const navigate = useNavigate();
-    const categories = [
-        { name: "colours", path: "/colours" },
-        { name: "mockups", path: "/mockups" },
-        { name: "fonts", path: "/fonts" },
-        { name: "inspirations", path: "/design-inspirations" },
-        { name: "icons", path: "/icons" },
-        { name: "illustrations", path: "/illustrations" },
-    ];
     const connect = [
         { 
             name: "share", 
@@ -35,7 +27,7 @@ export default function Footer() {
 
     return (
         <>
-            <div className="flex flex-row items-start justify-between w-full h-auto px-[5px] sm:px-0 md:px-[10px] pt-[10px] pb-0 mt-[30px] bg-white">
+            <div className="flex flex-row items-start justify-between w-full h-auto px-[5px] md:px-[10px] pt-[10px] mb-[5px] lg:mb-[10px] xl:mb-[20px] mt-[15px] bg-white">
 
                 {/* left side */}
                 <div className="hidden sm:flex sm:flex-col items-start justify-start w-auto h-auto ">
@@ -63,24 +55,6 @@ export default function Footer() {
                 {/*right side*/}
                 <div className="flex flex-row items-start justify-start w-full sm:w-auto h-auto gap-x-[20px] md:gap-x-[30px] lg:gap-x-[60px] mt-[20px] sm:mt-0">
 
-                    {/* category section */}
-                    <div className="hidden sm:flex sm:flex-col items-start justify-start w-auto h-auto mt-[5px]">
-                        <span className=" text-[15px] md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] text-black font-Outfit font-medium mb-[2px]  ml-0 sm:ml-[160px]">Categories</span>
-                        <div className="flex flex-col items-start ml-0 sm:ml-[160px]">
-                            {categories.map((category) => (
-                                <div className='flex flex-row items-center justify-start w-auto h-auto' key={category.name}>
-                                    <span
-                                        className="text-[15px] md:text-[15px] lg:text-[17px] xl:text-[19px] 2xl:text-[24px] font-Outfit font-medium text-[#898989] hover:text-black hover:cursor-pointer hover:underline-offset-2 hover:underline"
-                                        onClick={() => navigate(category.path)}
-                                    >
-                                        {category.name}
-                                    </span>
-                                    <img src={arrow} alt="arrow icon" className="w-[12px] h-[12px] md:w-[13px] md:h-[13px] lg:w-[15px] lg:h-[15px] xl:w-[17px] xl:h-[17px] 2xl:w-[20px] 2xl:h-[20px] ml-[5px]" /> 
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                    
                     <div className='flex flex-col w-full'>
                         <div className='flex flex-row  gap-x-[20px] sm:gap-x-[10px] md:gap-x-[30px] lg:gap-x-[60px]'>
                             {/* connect section */}

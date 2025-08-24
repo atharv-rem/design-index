@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Fustat:wght@200..800&&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --font-Outfit: "Outfit", sans-serif;
-    --font-Fustat: "Fustat", sans-serif;
     --font-CalSans: "Cal Sans", sans-serif;
+    --font-Fustat: "Fustat", sans-serif;
+    --font-Outfit: "Outfit", sans-serif;
     --breakpoint-xs: 412px;  
     --breakpoint-sm: 800px;
     --breakpoint-md: 1024px;

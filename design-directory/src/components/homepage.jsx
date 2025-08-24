@@ -1,28 +1,16 @@
-import font from "../assets/font.avif";
-import mockup from "../assets/mockup.avif";
-import illustration from "../assets/illustration.avif";
-import icon from "../assets/icon.avif";
-import design from "../assets/design.avif";
-import colour from "../assets/colour.avif";
 import image1 from "../assets/IMG-20250723-WA0006_1.avif"
 import image2 from "../assets/IMG-20250723-WA0007_1.avif"
 import image3 from "../assets/IMG-20250723-WA0008_1.avif"
 import image4 from "../assets/IMG-20250723-WA0009_1.avif"
-import { useNavigate} from "react-router-dom";
+import smiley from "../assets/smiley-in-love-solid.svg"
+import sidebar from "../assets/sidebar-left.svg"
+import scrollh from "../assets/arrows-scroll-h.svg"
 import Footer from "./footer";
 import { Title, Meta } from 'react-head';
+import Zustand_global_storage from "../zustand-global-storage";
 
 export default function Homepage() {
-  const navigate = useNavigate();
-
-  const images = [
-    { src: font, alt: "font illustration",path:"/fonts" },
-    { src: mockup, alt: "mockup illustration",path:"/mockups" },
-    { src: illustration, alt: "illustration",path:"/illustrations" },
-    { src: icon, alt: "icon illustration",path:"/icons" },
-    { src: design, alt: "design illustration",path:"/design-inspirations" },
-    { src: colour, alt: "colour illustration",path:"/colours" }
-  ];
+  const setSidebar = Zustand_global_storage((state) => state.setSidebar);
 
   return (
     <>
@@ -39,8 +27,14 @@ export default function Homepage() {
 
     <div className="flex flex-col items-center justify-center w-full h-auto bg-white">
       {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center w-full h-screen bg-white sticky top-0">
-        <div className="w-full flex flex-col items-center justify-center text-center">
+      <div className="flex flex-col items-start sm:items-center justify-center w-full h-screen bg-white sticky top-0">
+        {/* Desktop Version */}
+        <a href="https://peerlist.io/atharv_rem/project/design-index" target="_blank" rel="noopener noreferrer">
+          <div className="w-auto px-[10px] py-[5px] border-[1px] border-[#e2e2e2] shadow-sm rounded-[16px] cursor-pointer hover:translate-y-[-5px] transition-transform duration-300">
+            <p className="text-center text-[20px] sm:text-[18px] font-Outfit font-medium text-black">#18 on <strong className="text-[#00aa45]">Peerlist</strong></p>
+          </div>
+        </a>
+        <div style={{textShadow: "0 292px 82px rgba(145, 145, 145, 0.00), 0 187px 75px rgba(145, 145, 145, 0.01), 0 105px 63px rgba(145, 145, 145, 0.05), 0 47px 47px rgba(145, 145, 145, 0.09), 0 12px 26px rgba(145, 145, 145, 0.10)"}} className="hidden w-full sm:flex flex-col items-start sm:items-center sm:text-center">
           <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-CalSans mb-[5px]">
             Collection of the best
           </p>
@@ -48,70 +42,177 @@ export default function Homepage() {
             design resources
           </p>
         </div>
-        <div className="w-full flex flex-col items-center justify-center text-center mt-[10px] xs:mt-[20px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] leading-4 xs:leading-5 sm:leading-7 xl:leading-8  px-[30px] xs:px-[20px] sm:px-[100px] lg:px-[200px] 2xl:px-[300px]">
-          <p className="text-[15px] xs:text-[20px] sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#939393]">
+        
+        {/* Mobile Version */}
+        <div style={{textShadow: "0 292px 82px rgba(145, 145, 145, 0.00), 0 187px 75px rgba(145, 145, 145, 0.01), 0 105px 63px rgba(145, 145, 145, 0.05), 0 47px 47px rgba(145, 145, 145, 0.09), 0 12px 26px rgba(145, 145, 145, 0.10)"}} className="w-full flex-col items-start sm:items-center sm:text-center block sm:hidden mt-[15px]">
+          <p className="text-[65px] xs:text-[65px] sm:text-[70px] font-bold font-CalSans mb-[5px] leading-[60px] xs:leading-[60px]">
+            best design
+          </p>
+          <p className="text-[65px] xs:text-[65px] sm:text-[70px] font-bold font-CalSans mb-[5px] leading-[60px] xs:leading-[60px]">
+            resources on
+          </p>
+          <p className="text-[65px] xs:text-[65px] sm:text-[70px] font-bold font-CalSans mb-[5px] leading-[60px] xs:leading-[60px]">
+            the internet
+          </p>
+        </div>
+
+
+        <div className="block sm:hidden w-full items-start sm:items-center flex-col justify-center sm:text-center mt-[10px] xs:mt-[20px] sm:mt-[30px] leading-[25px] xs:leading-[30px] pr-[20px] text-left">
+          <p className="text-[25px] xs:text-[30px] font-medium font-Outfit text-[#939393]">
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
-      </div>
 
-      {/* Grid Section */}
-      <div className="w-auto flex flex-col items-center justify-center text-center bg-white rounded-t-[70px] sm:rounded-t-[100px] md:rounded-t-[100px] z-4 sm:ml-[30px] sm:mr-[30px] md:ml-[40px] md:mr-[40px] lg:ml-[60px] lg:mr-[60px] overflow-hidden">
-        <div className="w-auto flex flex-row items-center justify-center text-center pt-[40px] xs:pt-[50px] bg-white flex-grow">
-          <p className="text-[20px] xs:text-[27px] sm:text-[40px] md:text-[40px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold font-Outfit text-black text-wrap">
-            200+ tools across 6 categories
+        <div className="hidden w-full sm:flex items-start sm:items-center flex-col justify-center sm:text-center mt-[10px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] sm:leading-7 xl:leading-8 sm:px-[100px] lg:px-[200px] xl:px-[250px] 2xl:px-[300px]">
+          <p className="sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#939393]">
+            internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
-
-        <div className="grid grid-cols-2 gap-[15px] sm:gap-[40px] items-center justify-center w-auto h-auto bg-white px-[5px] sm:px-[50px] md:px-[80px] lg:px-[130px] xl:px-[180px] 2xl:px-[220px] pt-[20px]">
-          {images.map((img) => (
-            <div
-              key={img.alt}
-              onClick={() => navigate(img.path)}
-              className="cursor-pointer transition-transform hover:scale-105"
+        
+        {/* Product Hunt Button */}
+        <a 
+          href="https://www.producthunt.com/products/don-t-be-an-average-designer/reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-[200px] h-[45px] xl:w-[280px] xl:h-[60px] 2xl:w-[300px] 2xl:h-[70px] mt-[15px] sm:mt-[12px] xl:mt-[15px] 2xl:mt-[20px] hover:scale-105 transition-transform duration-300"
+        >
+        <svg 
+          width="auto" 
+          height="auto" 
+          viewBox="0 0 250 54" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="rounded-[18px] xl:rounded-[22px] 2xl:rounded-[28px] border-[1px] border-[#ededed] shadow-sm"
+        >
+          <g fill="none" fillRule="evenodd">
+            <rect 
+              x="0.5" 
+              y="0.5" 
+              width="249" 
+              height="53" 
+              rx="10" 
+              className="fill-white" 
+            />
+            
+            <text 
+              x="53" 
+              y="20" 
+              fontFamily="Outfit" 
+              fontSize="9" 
+              fontWeight="bold" 
+              className="fill-black"
             >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-auto h-auto object-cover border border-[#c5c5c5] rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] 2xl:rounded-[50px]"
+              LEAVE A REVIEW ON
+            </text>
+
+            <text 
+              x="52" 
+              y="40" 
+              fontFamily="Outfit" 
+              fontSize="16" 
+              fontWeight="bold" 
+              className="fill-black"
+            >
+              Product Hunt
+            </text>
+
+            {/* Star icon */}
+            <g transform="translate(205, 11) scale(1.4)" className="fill-black">
+              <path d="M23.04,9.021L14.77,8.796L12,1L9.23,8.796L0.96,9.021l6.559,5.043L5.177,22L12,17.321L18.823,22l-2.342-7.935L23.04,9.021z M12,14.896l-3.312,2.271l1.137-3.851l-3.183-2.448l4.014-0.109L12,6.974l1.344,3.784l4.014,0.109l-3.183,2.448l1.137,3.851 L12,14.896z"/>
+            </g>
+
+            {/* PH logo */}
+            <g transform="translate(11, 12)">
+              <circle r="15.5" cx="15.5" cy="15.5" className="fill-white stroke-1 stroke-[#dddddd]"/>
+              <path 
+                d="M17.4329412,15.9558824 L17.4329412,15.9560115 L13.0929412,15.9560115 L13.0929412,11.3060115 L17.4329412,11.3060115 L17.4329412,11.3058824 C18.7018806,11.3058824 19.7305882,12.3468365 19.7305882,13.6308824 C19.7305882,14.9149282 18.7018806,15.9558824 17.4329412,15.9558824 M17.4329412,8.20588235 L17.4329412,8.20601152 L10.0294118,8.20588235 L10.0294118,23.7058824 L13.0929412,23.7058824 L13.0929412,19.0560115 L17.4329412,19.0560115 L17.4329412,19.0558824 C20.3938424,19.0558824 22.7941176,16.6270324 22.7941176,13.6308824 C22.7941176,10.6347324 20.3938424,8.20588235 17.4329412,8.20588235" 
+                className="fill-black"
               />
-            </div>
-          ))}
+            </g>
+          </g>
+        </svg>
+      </a>
+
+      </div>
+
+
+      {/* Grid Section */}
+      <div className="w-full flex flex-col items-center justify-center text-center bg-white z-4 overflow-hidden">
+        <div className="w-auto flex flex-col items-center justify-center text-center pt-[40px] xs:pt-[50px] bg-white flex-grow">
+          <p className="border-[1px] rounded-2xl shadow-md border-[#efefef] px-[20px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold font-Outfit text-black">
+            200+ tools
+          </p>
+          <p className="mt-[10px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold font-Outfit text-black text-wrap">
+            across 6 categories
+          </p>
+          <p className="hidden md:flex-row md:flex mb-[10px] mt-[5px] ">
+            <img src={sidebar} alt="sidebar icon" className="inline-block mr-[8px] h-[18px] w-[18px] xs:w-[22px] xs:h-[22px] sm:w-[25px] sm:h-[25px] " />
+            <span className="font-semibold font-Outfit">take a peek at the sidebar on the left for all categories</span>
+          </p>
+          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium text-justify font-Outfit text-[#aaaaaa] leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[10px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] px-[40px] xs:px-[40px] sm:px-[10px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
+            At Design Index, every tool is handpicked to ensure it adds real value to designers and creators. Rather than listing countless options, the focus is on curating only the most reliable and effective tools. This quality-over-quantity approach makes us a trusted resource for discovering the best in design and creativity.
+          </p>
+          <button onClick={() => setSidebar(true)} className="mt-[30px] mb-[40px] items-center justify-center flex flex-row md:hidden rounded-[13px] xs:rounded-[15px] sm:rounded-[20px] shadow-md  px-[12px] xs:px-[15px] py-[5px] text-[20px] xs:text-[25px] sm:text-[30px] md:text-[25px] lg:text-[30px] xl:text-[35px] 2xl:text-[40px] font-semibold font-Outfit text-white bg-black">
+            <img src={smiley} alt="smiley face" className="inline-block mr-[8px] h-[18px] w-[18px] xs:w-[22px] xs:h-[22px] sm:w-[25px] sm:h-[25px]" />
+            <p>explore tools</p>
+          </button>
         </div>
+
+      
         <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
           <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
             search any way you want, we have it all
           </p>
-          <p className="text-[15px] xs:text-[20px] sm:text-[20px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[15px] xs:leading-[20px] sm:leading-[20px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] mb-[40px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
+          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] text-center leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[25px] sm:mr-[25px] md:ml-[70px] md:mr-[70px] lg:ml-[80px] lg:mr-[80px] xl:ml-[110px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[110px] mb-[40px] md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[70px]">
             We use NLP to process search queries and return the best results. We only support english.
           </p>
-          <div className="flex overflow-x-auto snap-x hide-scrollbar p-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
+          <div className="sm:hidden flex flex-row justify-center items-center">
+            <span className="font-Outfit font-semibold text-black">scroll horizontally</span>
+            <img src={scrollh} alt="" className="w-[30px] h-[30px]" />
+          </div>
+          <div className="sm:hidden flex flex-row overflow-x-auto snap-x hide-scrollbar px-[10px] pb-[10px] w-[250px] xs:w-[300px] sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px] h-auto justify-start items-start gap-x-[50px] scroll-smooth ">
             <img src={image2} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image1} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image3} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
             <img src={image4} alt="" className="w-auto h-auto object-contain snap-center border-[1px] border-[#f0f0f0] drop-shadow-md drop-shadow-neutral-100 rounded-[25px] sm:rounded-[30px] md:rounded-[35px] lg:rounded-[40px] xl:rounded-[45px] 2xl:rounded-[50px]" />
           </div>
+          <div style={{ position: "relative", paddingBottom: "61.7%" }} className="hidden sm:block">
+            <iframe
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
+              src="https://supercut.ai/embed/atharv-rem/hED-gUZ1ePhSLIJXgXNg7E?embed=full"
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                borderRadius: "10px",
+              }}
+              title="New ツSupercut"
+            ></iframe>
+          </div>
+
         </div>
 
-        <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
+        <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:m</div>t-[80px] ml-[40px] mr-[40px]">
           <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
             we are open source
           </p>
         </div>
-        <p className="text-[15px] xs:text-[20px] sm:text-[20px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[15px] xs:leading-[20px] sm:leading-[20px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
+        <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[20px] xs:leading-[25px] sm:leading-[30px] text-center md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[100px] sm:mr-[100px] md:ml-[140px] md:mr-[140px] lg:ml-[160px] lg:mr-[160px] xl:ml-[180px] 2xl:ml-[240px] 2xl:mr-[240px] xl:mr-[180px] px-[40px] xs:px-[50px] sm:px-[70px] md:px-[90px] lg:px-[100px] xl:px-[140px] 2xl:px-[160px]">
             Explore the code, contribute ideas, or just see how it all works
         </p>
         <a href="https://github.com/atharv-rem/design-index">
-          <div className="mb-[20px] shadow-sm w-auto flex flex-row items-center justify-center text-center z-4 mt-[15px] text-[15px] xs:text-[15px] sm:text-[15px] md:text-[17px] lg:text-[19px] xl:text-[21px] 2xl:text-[23px] font-semibold font-Outfit text-black hover:underline px-[10px] lg:px-[15px] py-[5px]  rounded-[12px] md:rounded-[15px] lg:rounded-[17px] xl:rounded-[19px] border-1 border-[#e2e2e2] hover:translate-y-[-4px] mduration-300 cursor-pointer transition-transform-ease-in-out">
+          <div className="px-[15px] mb-[20px] shadow-sm w-auto flex flex-row items-center justify-center text-center z-4 mt-[15px] text-[20px] sm:text-[15px] md:text-[17px] lg:text-[19px] xl:text-[21px] 2xl:text-[23px] font-semibold font-Outfit text-black hover:underline lg:px-[15px] py-[5px] rounded-[18px] md:rounded-[15px] lg:rounded-[17px] xl:rounded-[19px] border-1 border-[#e2e2e2] hover:translate-y-[-4px] mduration-300 cursor-pointer transition-transform-ease-in-out">
             /design-index
           </div>
         </a>
 
-      <div className='w-full md:w-[78vw] flex flex-row z-4'>
-        <Footer />
+        <div className='w-full md:w-[78vw] flex flex-row z-4'>
+          <Footer />
+        </div>
       </div>
     </div>
-  </div>
-</>
+    </>
   );
 }
