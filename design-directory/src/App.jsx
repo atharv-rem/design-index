@@ -220,30 +220,28 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
           <SearchBar />
           
           {/* Conditional rendering based on selected page */}
-          <Suspense fallback={<div>Loading...</div>}>
             <Routes>
-              <Route path="/colours" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Colours /></div>} />
-              <Route path="/" element={<Homepage />} />
-            <Route path="/mockups" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Mockups /></div>} />
-            <Route path="/fonts" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Font /></div>} />
-            <Route path="/design-inspirations" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Design_inspo /></div>} />
-            <Route path="/icons" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Icons /></div>} />
-            <Route path="/illustrations" element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Illustration /></div>} />
-            <Route path="*" element={
+            <Route path="/colours" element={ <Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Colours /></div></Suspense>} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/mockups" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Mockups /></div></Suspense>} />
+            <Route path="/fonts" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Font /></div></Suspense>} />
+            <Route path="/design-inspirations" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Design_inspo /></div></Suspense>} />
+            <Route path="/icons" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Icons /></div></Suspense>} />
+            <Route path="/illustrations" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Illustration /></div></Suspense>} />
+            <Route path="*" element={ <Suspense fallback={<div>Loading...</div>}>
               <div className="w-full h-screen flex flex-col justify-center items-center">
                 <p className="text-2xl text-black font-Outfit font-semibold">
                   404 Page Not Found
                 </p>
-              </div>} />
-            <Route path='/Privacy-Policy' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><PrivacyPolicy /></div>} />
-            <Route path='/About' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><About /></div>} />
-            <Route path='/Terms-and-Conditions' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Terms_and_Conditions /></div>} />
-            <Route path='/Search-Results' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchresults /></div>} />
-            <Route path='/Search' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchimage /></div>} />
-            <Route path='/Feedback' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Feedback /></div>} />
-            <Route path='/Submit-a-Tool' element={<SubmitATool />} />
+              </div></Suspense>} />
+            <Route path='/Privacy-Policy' element={ <Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><PrivacyPolicy /></div></Suspense>} />
+            <Route path='/About' element={ <Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><About /></div></Suspense>} />
+            <Route path='/Terms-and-Conditions' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Terms_and_Conditions /></div></Suspense>} />
+            <Route path='/Search-Results' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchresults /></div></Suspense>} />
+            <Route path='/Search' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchimage /></div></Suspense>} />
+            <Route path='/Feedback' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Feedback /></div></Suspense>} />
+            <Route path='/Submit-a-Tool' element={<Suspense fallback={<div>Loading...</div>}><SubmitATool /></Suspense>} />
           </Routes>
-        </Suspense>
         </div>
         
       </div>
