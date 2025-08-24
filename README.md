@@ -22,8 +22,96 @@ Whether you're just starting out or already working on client projects, I hope t
 * ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) - simiplified styling on our webpage
 * ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=whi) - website is hosted on vercel
 
+## Mermaid diagram
+```mermaid
+flowchart TD
+    %% Client Layer
+    subgraph "Client"
+        BROWSER["Web Browser"]:::client
+    end
+
+    %% CDN & Hosting Layer
+    subgraph "CDN & Hosting"
+        VERCELCDN["Vercel CDN & Edge Network"]:::hosting
+        VERCELHOST["Vercel Hosting"]:::hosting
+    end
+
+    %% Serverless Functions Layer
+    subgraph "Serverless Functions"
+        SITEMAP["sitemap.js (Edge Function)"]:::function
+    end
+
+    %% Data & Storage Layer
+    subgraph "Data & Storage"
+        SUPABASE["Supabase Service"]:::storage
+        PG["PostgreSQL Database"]:::database
+        R2["Cloudflare R2 Storage"]:::storage
+    end
+
+    %% SPA Application Components
+    subgraph "SPA (Vite + React + Tailwind + Zustand + Virtualization)" 
+        SPA["SPA Application"]:::client
+        MAIN["main.jsx"]:::client
+        APP["App.jsx"]:::client
+        CMPS["components/"]:::client
+        STORE["zustand-global-storage.js"]:::client
+        SBCLIENT["supabaseClient.js"]:::client
+        ASSETS["assets/"]:::client
+        STYLE["index.css"]:::client
+        DBJSON["database.json"]:::client
+    end
+
+    %% Connections
+    BROWSER -->|"GET /index.html, CSS, JS"| VERCELCDN
+    VERCELCDN -->|"serve SPA files"| SPA
+
+    SPA -->|"mounts"| MAIN
+    MAIN -->|"defines routes"| APP
+    APP -->|"renders UI components"| CMPS
+    SPA -->|"state management"| STORE
+    SPA -->|"API client"| SBCLIENT
+    SPA -->|"loads static assets"| ASSETS
+    SPA -->|"loads styles"| STYLE
+    SPA -->|"dev stub data"| DBJSON
+
+    SPA -->|"GET /resources?query=..."| SUPABASE
+    SPA -->|"fetch asset URL"| R2
+
+    BROWSER -->|"GET /api/sitemap"| VERCELHOST
+    VERCELHOST -->|"executes"| SITEMAP
+    SITEMAP -->|"query or template"| SUPABASE
+    VERCELHOST -->|"cache assets"| R2
+
+    SUPABASE -->|"stores data"| PG
+
+    %% Click Events
+    click SPA "https://github.com/atharv-rem/design-index/tree/main/design-directory/src/"
+    click MAIN "https://github.com/atharv-rem/design-index/blob/main/design-directory/src/main.jsx"
+    click APP "https://github.com/atharv-rem/design-index/blob/main/design-directory/src/App.jsx"
+    click CMPS "https://github.com/atharv-rem/design-index/tree/main/design-directory/src/components/"
+    click STORE "https://github.com/atharv-rem/design-index/blob/main/design-directory/src/zustand-global-storage.js"
+    click SBCLIENT "https://github.com/atharv-rem/design-index/blob/main/design-directory/src/supabaseClient.js"
+    click ASSETS "https://github.com/atharv-rem/design-index/tree/main/design-directory/src/assets/"
+    click STYLE "https://github.com/atharv-rem/design-index/blob/main/design-directory/src/index.css"
+    click DBJSON "https://github.com/atharv-rem/design-index/blob/main/design-directory/src/database.json"
+    click VERCELCDN "https://github.com/atharv-rem/design-index/tree/main/design-directory/public/"
+    click SITEMAP "https://github.com/atharv-rem/design-index/blob/main/design-directory/api/sitemap.js"
+    click VITE "https://github.com/atharv-rem/design-index/blob/main/design-directory/vite.config.js"
+    click VERCELHOST "https://github.com/atharv-rem/design-index/blob/main/design-directory/vercel.json"
+    click PKG "https://github.com/atharv-rem/design-index/blob/main/design-directory/package.json"
+
+    %% Styles
+    classDef client fill:#cce5ff,stroke:#004085,stroke-width:1px;
+    classDef hosting fill:#d4edda,stroke:#155724,stroke-width:1px;
+    classDef function fill:#fff3cd,stroke:#856404,stroke-width:1px;
+    classDef storage fill:#d1ecf1,stroke:#0c5460,stroke-width:1px;
+    classDef database fill:#bee5eb,stroke:#0c4147,stroke-width:1px;
+```
+
 ## Guidelines
 > [!IMPORTANT]
 > Please read this licence before contributing or cloning this github repo
+
 > [!CAUTION]
 > cloning of this repo might not give you expected results as the database is held in supabase
+
