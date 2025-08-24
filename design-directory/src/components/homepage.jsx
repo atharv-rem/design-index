@@ -44,24 +44,37 @@ export default function Homepage() {
         </div>
         
         {/* Mobile Version */}
-        <div style={{textShadow: "0 292px 82px rgba(145, 145, 145, 0.00), 0 187px 75px rgba(145, 145, 145, 0.01), 0 105px 63px rgba(145, 145, 145, 0.05), 0 47px 47px rgba(145, 145, 145, 0.09), 0 12px 26px rgba(145, 145, 145, 0.10)"}} className="w-full flex-col items-start sm:items-center sm:text-center block sm:hidden mt-[15px]">
-          <p className="text-[65px] xs:text-[65px] sm:text-[70px] font-bold font-CalSans mb-[5px] leading-[60px] xs:leading-[60px]">
+        <div className="w-full flex-col items-start sm:items-center sm:text-center block sm:hidden mt-[15px]">
+          <p style={{ fontFamily: "Cal sans, sans-serif"}} className="text-[40px] xs:text-[40px] sm:text-[70px] mb-[5px] leading-[35px]">
             best design
           </p>
-          <p className="text-[65px] xs:text-[65px] sm:text-[70px] font-bold font-CalSans mb-[5px] leading-[60px] xs:leading-[60px]">
+          <p style={{ fontFamily: "Cal sans, sans-serif"}} className="text-[40px] xs:text-[40px] sm:text-[70px] mb-[5px] leading-[35px]">
             resources on
           </p>
-          <p className="text-[65px] xs:text-[65px] sm:text-[70px] font-bold font-CalSans mb-[5px] leading-[60px] xs:leading-[60px]">
+          <p style={{ fontFamily: "Cal sans, sans-serif"}} className="text-[40px] xs:text-[40px] sm:text-[70px] mb-[5px] leading-[35px]">
             the internet
           </p>
         </div>
 
 
-        <div className="block sm:hidden w-full items-start sm:items-center flex-col justify-center sm:text-center mt-[10px] xs:mt-[20px] sm:mt-[30px] leading-[25px] xs:leading-[30px] pr-[20px] text-left">
-          <p className="text-[25px] xs:text-[30px] font-medium font-Outfit text-[#939393]">
+        <div 
+          className="w-full flex flex-col items-center justify-center text-left mt-[10px] sm:mt-[30px] sm:hidden"
+        >
+          <p 
+            style={{
+              fontFamily: "'Outfit', sans-serif", // ensure swap font
+              fontWeight: 500,
+              fontSize: '20px', // base size
+              lineHeight: '1', // fix layout
+              color: '#aaaaaa',
+              maxWidth: '900px', // avoid extra wrapping
+              marginRight: '10px', // center
+            }}
+          >
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
+
 
         <div className="hidden w-full sm:flex items-start sm:items-center flex-col justify-center sm:text-center mt-[10px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] sm:leading-7 xl:leading-8 sm:px-[100px] lg:px-[200px] xl:px-[250px] 2xl:px-[300px]">
           <p className="sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#939393]">
