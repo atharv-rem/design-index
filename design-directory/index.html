@@ -4,7 +4,44 @@
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Fustat:wght@200..800&family=Cal+Sans&display=swap" rel="stylesheet">
+    <link rel="preload"
+          href="https://fonts.gstatic.com/s/outfit/v14/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+    <link rel="preload"
+          href="https://fonts.gstatic.com/s/fustat/v3/NaPZcZ_aHO9Iy5tLSPJCgSm1ZA.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+    <link rel="preload"
+          href="https://fonts.gstatic.com/s/calsans/v2/fdN99sWUv3gWqXxqqRBctFsm46Zw.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+    <style>
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 400 900; /* since you’re using variable weights */
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/outfit/v14/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Fustat';
+      font-style: normal;
+      font-weight: 200 800; /* variable range */
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/fustat/v3/NaPZcZ_aHO9Iy5tLSPJCgSm1ZA.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Cal Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('https://fonts.gstatic.com/s/calsans/v2/fdN99sWUv3gWqXxqqRBctFsm46Zw.woff2') format('woff2');
+    }
+    </style>
     <!-- Default favicon for Google & browsers -->
     <link rel="icon" href="/logo_light.svg" type="image/svg+xml" />
     <!-- Optional fallback for older browsers -->
