@@ -106,11 +106,11 @@ function Mockups() {
       <Meta property="og:title" content="Mockups | Design Directory" />
       <Meta property="og:description" content="curated library of high-quality mockups to showcase your designs in real-world contexts" />
       <Meta property="og:type" content="website" />
-      <Meta property="og:image" content="https://pub-c51f3dea40b34c5f8f4cd14637f22cdc.r2.dev/og_image.avif" />
+      <Meta property="og:image" content="https://designindex.xyz/preview.avif" />
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:title" content="Mockups | Design Directory" />
       <Meta name="twitter:description" content="curated library of high-quality mockups to showcase your designs in real-world contexts" />
-      <Meta name="twitter:image" content="https://pub-c51f3dea40b34c5f8f4cd14637f22cdc.r2.dev/og_image.avif" />
+      <Meta name="twitter:image" content="https://designindex.xyz/twitter_preview.avif" />
 
       {!selectedItem ? // it checks if the url has tool parameter, since it is false here it displays the title along with the virtual list
       (

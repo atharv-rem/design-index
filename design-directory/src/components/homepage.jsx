@@ -19,11 +19,11 @@ export default function Homepage() {
     <Meta property="og:title" content="Design Index" />
     <Meta property="og:description" content="Collection of the best design resources on the internet" />
     <Meta property="og:type" content="website" />
-    <Meta property="og:image" content="https://pub-c51f3dea40b34c5f8f4cd14637f22cdc.r2.dev/og_image.avif" />
+    <Meta property="og:image" content="https://designindex.xyz/preview.avif" />
     <Meta name="twitter:card" content="summary_large_image" />
     <Meta name="twitter:title" content="Design Index" />
     <Meta name="twitter:description" content="Collection of the best design resources on the internet" />
-    <Meta name="twitter:image" content="https://pub-c51f3dea40b34c5f8f4cd14637f22cdc.r2.dev/og_image.avif" />
+    <Meta name="twitter:image" content="https://designindex.xyz/twitter_preview.avif" />
 
     <div className="flex flex-col items-center justify-center w-full h-auto bg-white">
       {/* Hero Section */}
