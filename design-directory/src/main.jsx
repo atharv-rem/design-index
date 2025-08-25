@@ -13,19 +13,18 @@ const options = {
   capture_pageview_autocapture: true,
 
   session_recording: {
-    maskAllInputs: false, // or true if you want sensitive data hidden
-    recordCanvas: true,
+    maskAllInputs: false, 
+    recordCanvas: false,
   },
   disable_surveys: true,
   disable_toolbar: true,
   disable_feature_flags: true,
   disable_compression: true,
-  disable_session_recording: false, // keep recordings enabled
+  disable_session_recording: true,
 }
 
 const POSTHOG_KEY = import.meta.env.VITE_PUBLIC_POSTHOG_KEY
 
-// --- Lazy load PostHog only ---
 if (POSTHOG_KEY && location.hostname !== 'localhost') {
   window.addEventListener('load', () => {
     import('posthog-js').then((posthog) => {

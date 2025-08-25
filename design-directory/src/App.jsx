@@ -18,9 +18,9 @@ import { lazy, Suspense } from "react";
 const Colours = lazy(() => import("./components/colours.jsx"));
 const Mockups = lazy(() => import("./components/mockups.jsx"));
 const Font = lazy(() => import("./components/font.jsx"));
-const SearchBar = lazy(() => import("./components/search bar.jsx"));
-const Searchresults = lazy(() => import("./components/search results.jsx"));
-const Searchimage = lazy(() => import("./components/search_suggestions.jsx"));
+import SearchBar from "./components/search bar.jsx";
+import Searchresults from "./components/search results.jsx";
+import Searchimage from "./components/search_suggestions.jsx";
 const Design_inspo = lazy(() => import("./components/desin-inspo.jsx"));
 const Icons = lazy(() => import("./components/icons.jsx"));
 const Illustration = lazy(() => import("./components/illustrations.jsx"));
@@ -237,8 +237,8 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
             <Route path='/Privacy-Policy' element={ <Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><PrivacyPolicy /></div></Suspense>} />
             <Route path='/About' element={ <Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><About /></div></Suspense>} />
             <Route path='/Terms-and-Conditions' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Terms_and_Conditions /></div></Suspense>} />
-            <Route path='/Search-Results' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchresults /></div></Suspense>} />
-            <Route path='/Search' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchimage /></div></Suspense>} />
+            <Route path='/Search-Results' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchresults /></div>} />
+            <Route path='/Search' element={<div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Searchimage /></div>} />
             <Route path='/Feedback' element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Feedback /></div></Suspense>} />
             <Route path='/Submit-a-Tool' element={<Suspense fallback={<div>Loading...</div>}><SubmitATool /></Suspense>} />
           </Routes>
