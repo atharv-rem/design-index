@@ -66,7 +66,7 @@ export default function Homepage() {
               fontWeight: 500,
               fontSize: '20px', 
               lineHeight: '1', 
-              color: '#aaaaaa',
+              color: '#4a4a4a',
               maxWidth: '900px', 
               marginRight: '10px', 
             }}
@@ -77,7 +77,7 @@ export default function Homepage() {
 
 
         <div className="hidden w-full sm:flex items-start sm:items-center flex-col justify-center sm:text-center mt-[10px] sm:mt-[30px] md:mt-[30px] xl:mt-[40px] 2xl:mt-[50px] sm:leading-7 xl:leading-8 sm:px-[100px] lg:px-[200px] xl:px-[250px] 2xl:px-[300px]">
-          <p className="sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#939393]">
+          <p className="sm:text-[25px] md:text-[25px] lg:text-[25px] xl:text-[30px] 2xl:text-[35px] font-medium font-Outfit text-[#4a4a4a]">
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function Homepage() {
             <img src={sidebar} alt="sidebar icon" className="inline-block mr-[8px] h-[18px] w-[18px] xs:w-[22px] xs:h-[22px] sm:w-[25px] sm:h-[25px] " />
             <span className="font-semibold font-Outfit">take a peek at the sidebar on the left for all categories</span>
           </p>
-          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium text-justify font-Outfit text-[#aaaaaa] leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[10px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] px-[40px] xs:px-[40px] sm:px-[10px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
+          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium text-justify font-Outfit text-[#4a4a4a] leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[10px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[50px] sm:mr-[50px] xl:ml-[100px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[100px] px-[40px] xs:px-[40px] sm:px-[10px] md:px-[40px] lg:px-[50px] xl:px-[60px] 2xl:px-[70px]">
             At Design Index, every tool is handpicked to ensure it adds real value to designers and creators. Rather than listing countless options, the focus is on curating only the most reliable and effective tools. This quality-over-quantity approach makes us a trusted resource for discovering the best in design and creativity.
           </p>
           <button onClick={() => setSidebar(true)} className="mt-[30px] mb-[40px] items-center justify-center flex flex-row md:hidden rounded-[13px] xs:rounded-[15px] sm:rounded-[20px] shadow-md  px-[12px] xs:px-[15px] py-[5px] text-[20px] xs:text-[25px] sm:text-[30px] md:text-[25px] lg:text-[30px] xl:text-[35px] 2xl:text-[40px] font-semibold font-Outfit text-white bg-black">
@@ -176,7 +176,7 @@ export default function Homepage() {
           <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
             search any way you want, we have it all
           </p>
-          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] text-center leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[25px] sm:mr-[25px] md:ml-[70px] md:mr-[70px] lg:ml-[80px] lg:mr-[80px] xl:ml-[110px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[110px] mb-[40px] md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[70px]">
+          <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#4a4a4a] text-center leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[25px] sm:mr-[25px] md:ml-[70px] md:mr-[70px] lg:ml-[80px] lg:mr-[80px] xl:ml-[110px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[110px] mb-[40px] md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[70px]">
             We use NLP to process search queries and return the best results. We only support english.
           </p>
           <div className="flex flex-row justify-center items-center">
@@ -217,7 +217,7 @@ export default function Homepage() {
             we are open source
           </p>
         </div>
-        <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#aaaaaa] leading-[20px] xs:leading-[25px] sm:leading-[30px] text-center md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[100px] sm:mr-[100px] md:ml-[140px] md:mr-[140px] lg:ml-[160px] lg:mr-[160px] xl:ml-[180px] 2xl:ml-[240px] 2xl:mr-[240px] xl:mr-[180px] px-[40px] xs:px-[50px] sm:px-[70px] md:px-[90px] lg:px-[100px] xl:px-[140px] 2xl:px-[160px]">
+        <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#4a4a4a] leading-[20px] xs:leading-[25px] sm:leading-[30px] text-center md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[100px] sm:mr-[100px] md:ml-[140px] md:mr-[140px] lg:ml-[160px] lg:mr-[160px] xl:ml-[180px] 2xl:ml-[240px] 2xl:mr-[240px] xl:mr-[180px] px-[40px] xs:px-[50px] sm:px-[70px] md:px-[90px] lg:px-[100px] xl:px-[140px] 2xl:px-[160px]">
             Explore the code, contribute ideas, or just see how it all works
         </p>
         <a href="https://github.com/atharv-rem/design-index">
