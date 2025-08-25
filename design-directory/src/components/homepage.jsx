@@ -27,14 +27,14 @@ export default function Homepage() {
 
     <div className="flex flex-col items-center justify-center w-full h-auto bg-white">
       {/* Hero Section */}
-      <div className="flex flex-col items-start sm:items-center justify-center w-full h-screen bg-white sticky top-0">
+      <div className="flex flex-col items-start sm:items-center justify-center w-full h-[100dvh] bg-white sticky top-0">
         {/* Desktop Version */}
         <a href="https://peerlist.io/atharv_rem/project/design-index" target="_blank" rel="noopener noreferrer">
-          <div className="w-auto px-[10px] py-[5px] border-[1px] border-[#e2e2e2] shadow-sm rounded-[16px] cursor-pointer hover:translate-y-[-5px] transition-transform duration-300">
-            <p className="text-center text-[20px] sm:text-[18px] font-Outfit font-medium text-black">#18 on <strong className="text-[#00aa45]">Peerlist</strong></p>
+          <div className="w-auto px-[10px] py-[5px] border-[1px] border-[#e2e2e2] shadow-sm rounded-[13px]  sm:rounded-[16px] cursor-pointer hover:translate-y-[-5px] transition-transform duration-300">
+            <p className="text-center text-[15px] sm:text-[18px] font-Outfit font-medium text-black">#18 on <strong className="text-[#00aa45]">Peerlist</strong></p>
           </div>
         </a>
-        <div style={{textShadow: "0 292px 82px rgba(145, 145, 145, 0.00), 0 187px 75px rgba(145, 145, 145, 0.01), 0 105px 63px rgba(145, 145, 145, 0.05), 0 47px 47px rgba(145, 145, 145, 0.09), 0 12px 26px rgba(145, 145, 145, 0.10)"}} className="hidden w-full sm:flex flex-col items-start sm:items-center sm:text-center">
+        <div className="hidden w-full sm:flex flex-col items-start sm:items-center sm:text-center">
           <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-CalSans mb-[5px]">
             Collection of the best
           </p>
@@ -62,13 +62,13 @@ export default function Homepage() {
         >
           <p 
             style={{
-              fontFamily: "'Outfit', sans-serif", // ensure swap font
+              fontFamily: "'Outfit', sans-serif", 
               fontWeight: 500,
-              fontSize: '20px', // base size
-              lineHeight: '1', // fix layout
+              fontSize: '20px', 
+              lineHeight: '1', 
               color: '#aaaaaa',
-              maxWidth: '900px', // avoid extra wrapping
-              marginRight: '10px', // center
+              maxWidth: '900px', 
+              marginRight: '10px', 
             }}
           >
             internet's handpicked design resources, we don’t compromise on quality
@@ -149,7 +149,7 @@ export default function Homepage() {
       </div>
 
 
-      {/* Grid Section */}
+      {/* 200+ tools Section */}
       <div className="w-full flex flex-col items-center justify-center text-center bg-white z-4 overflow-hidden">
         <div className="w-auto flex flex-col items-center justify-center text-center pt-[40px] xs:pt-[50px] bg-white flex-grow">
           <p className="border-[1px] rounded-2xl shadow-md border-[#efefef] px-[20px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold font-Outfit text-black">

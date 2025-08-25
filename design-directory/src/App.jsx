@@ -229,7 +229,7 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
             <Route path="/icons" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Icons /></div></Suspense>} />
             <Route path="/illustrations" element={<Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Illustration /></div></Suspense>} />
             <Route path="*" element={ <Suspense fallback={<div>Loading...</div>}>
-              <div className="w-full h-screen flex flex-col justify-center items-center">
+              <div className="w-full h-[100dvh] flex flex-col justify-center items-center">
                 <p className="text-2xl text-black font-Outfit font-semibold">
                   404 Page Not Found
                 </p>
