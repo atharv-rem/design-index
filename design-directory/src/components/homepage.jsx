@@ -35,10 +35,10 @@ export default function Homepage() {
           </div>
         </a>
         <div className="hidden w-full sm:flex flex-col items-start sm:items-center sm:text-center">
-          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-CalSans mb-[5px]">
+          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-CalSans mb-[5px]">
             Collection of the best
           </p>
-          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-bold font-CalSans mb-[10px] mt-0 leading-[10px] md:leading-[20px] 2xl:leading-[35px]">
+          <p className="text-[35px] xs:text-[40px] sm:text-[65px] md:text-[65px] lg:text-[70px] xl:text-[80px] 2xl:text-[100px] font-CalSans mb-[10px] mt-0 leading-[10px] md:leading-[20px] 2xl:leading-[35px]">
             design resources
           </p>
         </div>
@@ -152,10 +152,10 @@ export default function Homepage() {
       {/* 200+ tools Section */}
       <div className="w-full flex flex-col items-center justify-center text-center bg-white z-4 overflow-hidden">
         <div className="w-auto flex flex-col items-center justify-center text-center pt-[40px] xs:pt-[50px] bg-white flex-grow">
-          <p className="border-[1px] rounded-2xl shadow-md border-[#efefef] px-[20px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold font-Outfit text-black">
+          <p className="border-[1px] rounded-2xl shadow-md border-[#efefef] px-[20px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px]  font-CalSans text-black">
             200+ tools
           </p>
-          <p className="mt-[10px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-semibold font-Outfit text-black text-wrap">
+          <p className="mt-[10px] text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px]  font-CalSans text-black text-wrap">
             across 6 categories
           </p>
           <p className="hidden md:flex-row md:flex mb-[10px] mt-[5px] ">
@@ -173,7 +173,7 @@ export default function Homepage() {
 
       
         <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
-          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
+          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-CalSans leading-7 xs:leading-8 text-black">
             search any way you want, we have it all
           </p>
           <p className="text-[20px] xs:text-[25px] sm:text-[30px] md:text-[20px] lg:text-[25px] xl:text-[28px] 2xl:text-[35px] font-medium font-Outfit text-[#4a4a4a] text-center leading-[20px] xs:leading-[25px] sm:leading-[30px] md:leading-[20px] lg:leading-[25px] xl:leading-[28px] 2xl:leading-[32px] mt-[5px] sm:mt-[15px] xl:mt-[20px] 2xl:mt-[30px] sm:ml-[25px] sm:mr-[25px] md:ml-[70px] md:mr-[70px] lg:ml-[80px] lg:mr-[80px] xl:ml-[110px] 2xl:ml-[200px] 2xl:mr-[200px] xl:mr-[110px] mb-[40px] md:px-[40px] lg:px-[60px] xl:px-[60px] 2xl:px-[70px]">
@@ -212,8 +212,8 @@ export default function Homepage() {
           </div>
         </div>
 
-        <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:m</div>t-[80px] ml-[40px] mr-[40px]">
-          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-bold font-CalSans leading-7 xs:leading-8 text-black">
+        <div className="w-auto flex flex-col items-center justify-center text-center z-4 mt-[50px] lg:mt-[80px] ml-[40px] mr-[40px]">
+          <p className="text-[25px] xs:text-[30px] sm:text-[35px] md:text-[35px] lg:text-[45px] xl:text-[50px] 2xl:text-[60px] font-CalSans leading-7 xs:leading-8 text-black">
             we are open source
           </p>
         </div>
