@@ -60,7 +60,17 @@ export default function Homepage() {
         <div 
           className="w-full flex flex-col items-center justify-center text-left mt-[10px] sm:mt-[30px] sm:hidden"
         >
-          <p className="text-[20px] font-Outfit font-semibold leading-[20px] text-[#4a4a4a]">
+          <p 
+            style={{
+              fontFamily: "'Outfit', sans-serif", 
+              fontWeight: 500,
+              fontSize: '20px', 
+              lineHeight: '1', 
+              color: '#4a4a4a',
+              maxWidth: '900px', 
+              marginRight: '10px', 
+            }}
+          >
             internet's handpicked design resources, we don’t compromise on quality
           </p>
         </div>
