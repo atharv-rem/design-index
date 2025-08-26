@@ -218,7 +218,7 @@ const should_disable_scroll = disable_scroll.includes(location.pathname);
           <img onClick={handleToggleSidebar} src={sidebar_icon} alt="sidebar icon" className="drop-shadow-md drop-shadow-neutral-100 border-1 border-[#ececec] rounded-[10px] p-[5px] md:hidden w-[36px] h-[36px] fixed right-[10px] top-[70px] z-5 bg-white" />
 
           <SearchBar />
-          
+          <Homepage initial />
           {/* Conditional rendering based on selected page */}
             <Routes>
             <Route path="/colours" element={ <Suspense fallback={<div>Loading...</div>}><div className="mt-[90px] md:mt-[40px] lg:mt-[50px] xl:mt-[50px] 2xl:mt-[50px]"><Colours /></div></Suspense>} />
